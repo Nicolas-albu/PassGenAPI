@@ -2,11 +2,13 @@
 <img src="docs\OpenGenAPI-GIF.gif" alt="OpenGenAPI">
 
 # :globe_with_meridians: PassGenAPI
- A API :globe_with_meridians:PassGenAPI é uma ferramenta de geração de senhas altamente seguras para proteger suas informações online que atualmente está em desenvolvimento inicial. Com esta API, você poderá gerar senhas fortes e exclusivas, personalizadas para atender às suas necessidades de segurança! 💂🏼‍♂️
+ A :globe_with_meridians:PassGenAPI é uma ferramenta de geração de senhas altamente seguras para proteger suas informações online que atualmente está em desenvolvimento inicial. Com esta API, você poderá gerar senhas fortes e exclusivas, personalizadas para atender às suas necessidades de segurança! 💂🏼‍♂️
 
 ## Instalação
 
 <div class="termy">
+
+Clonamos a PassGenAPI para seu ambiente local
 
 ```console
 $ git clone https://github.com/Nicolas-albu/PassGenAPI.git
