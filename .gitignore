@@ -1,0 +1,5 @@
+develop_api
+app/__pycache__
+app/generator/__pycache__
+app/routes/__pycache__
+app/routes/models/__pycache__
