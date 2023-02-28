@@ -1,2 +1,30 @@
-# PassGenAPI
- A API PassGenAPI é uma ferramenta de geração de senhas altamente seguras para proteger suas informações online. Com esta API, você pode gerar senhas fortes e exclusivas, personalizadas para atender às suas necessidades de segurança. Essa API utiliza algoritmos avançados para gerar senhas complexas e aleatórias, que são praticamente impossíveis de serem adivinhadas ou quebradas. Além disso, a API PassGenAPI é fácil de ser integrada em seus sistemas e aplicativos, permitindo que você implemente rapidamente senhas seguras em seu ambiente de tecnologia. Com a PassGenAPI, você pode garantir que suas informações online estejam sempre protegidas, sem precisar se preocupar com a criação manual de senhas.
+
+<img src="docs\OpenGenAPI-GIF.gif" alt="OpenGenAPI">
+
+# :globe_with_meridians: PassGenAPI
+ A API :globe_with_meridians: PassGenAPI é uma ferramenta de geração de senhas altamente seguras para proteger suas informações online que atualmente está em desenvolvimento inicial. Com esta API, você poderá gerar senhas fortes e exclusivas, personalizadas para atender às suas necessidades de segurança! 💂🏼‍♂️
+
+## Installation
+
+<div class="termy">
+
+```console
+$ git clone https://github.com/Nicolas-albu/PassGenAPI.git
+```
+
+Crie o seu ambiente virtual
+
+```console
+$ py -m venv nome_do_ambiente
+```
+
+Ative o seu ambiente virtual.
+```console
+$ nome_do_ambiente\Scripts\activate
+```
+
+Instale todas as dependências através do requirements.txt
+
+```console
+$ pip install -r requirements.txt
+```

@@ -7,9 +7,10 @@ password_routes = APIRouter()
 
 @password_routes.post("/password_definitions/")
 def password_generator(password_definitions: Password):
+    
     return {
             "password": PasswordGenerator(
                 password_length=password_definitions.password_length,
                 types_of_characters=password_definitions.types_of_characters
-                ).generate_with_all_characters()
+                ).generate()
             }
