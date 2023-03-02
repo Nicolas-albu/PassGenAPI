@@ -6,16 +6,15 @@ from app.routes.models.password_model import Password
 password_routes = APIRouter()
 
 @password_routes.post("/password_definitions/")
-def password_generator(password_definitions: Password) -> dict:
-    """_summary_
+async def password_generator(password_definitions: Password) -> dict:
+    """Router POST method to create a new password with the passed parameters
 
     Args:
-        password_definitions (Password): _description_
+        password_definitions (Password): parameters for the new password
 
     Returns:
-        dict: _description_
+        dict: the new password generated in JSON format
     """
-    
     return {
             "password": PasswordGenerator(
                 password_length=password_definitions.password_length,
