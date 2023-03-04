@@ -41,12 +41,12 @@ def test_generate():
     password = generated_password.generate()
     assert len(password) == 12
     assert password.isalnum()
+    assert not password.isupper()
     
 def test_generate_two():
     generated_password = PasswordGenerator(13, ["lowercase", "digits"])
     password = generated_password.generate()
     assert len(password) == 13
     assert password.isalnum()
-    
-if __name__ == "__main__":
-    test_generate_with_all_characters()
+    assert password.islower()
+    assert not password.isupper()

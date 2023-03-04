@@ -19,8 +19,12 @@ class PasswordGenerator:
             ('uppercase',): ascii_uppercase,
             ("lowercase",): ascii_lowercase,
             ("digits",): digits,
+            ("uppercase", "lowercase"): ascii_letters,
+            ("lowercase", "uppercase"): ascii_letters,
             ("digits", "uppercase"): ascii_uppercase + digits,
             ("digits", "lowercase"): ascii_lowercase + digits,
+            ("uppercase", "digits"): ascii_uppercase + digits,
+            ("lowercase", "digits"): ascii_lowercase + digits,
         }
         #stores the characters associated with the key
         self.__characters: str = character_sets.get(tuple(self.__types_of_characters) 
@@ -37,8 +41,12 @@ class PasswordGenerator:
             ("uppercase",): self.generate_with_uppercase,
             ("lowercase",): self.generate_with_lowercase,
             ("digits",): self.generate_with_digits,
+            ("lowercase", "uppercase"): self.generate_with_letters,
+            ("uppercase", "lowercase"): self.generate_with_letters,
             ("digits", "uppercase"): self.generate_with_uppercase,
-            ("digits", "lowercase"): self.generate_with_lowercase,            
+            ("digits", "lowercase"): self.generate_with_lowercase,
+            ("uppercase", "digits"): self.generate_with_uppercase,
+            ("lowercase", "digits"): self.generate_with_lowercase,
         }
         #returns the method call associated with the key, otherwise returns self.generate_with_all_characters
         return generation_cases.get(tuple(self.__types_of_characters) 
@@ -62,6 +70,9 @@ class PasswordGenerator:
         """
         return "".join(secrets.choice(self.__characters) for password_position in range(self.__password_length))
     
+    def generate_with_letters(self) -> str:
+        return "".join(secrets.choice(self.__characters) for password_position in range(self.__password_length))
+    
     def generate_with_digits(self) -> str:
         """method to generate password only with digits
 
@@ -76,8 +87,12 @@ class PasswordGenerator:
         Returns:
             str: passwords generated with all characters
         """
-        other_characters = ascii_letters + digits
-        return "".join(secrets.choice(other_characters) for password_position in range(self.__password_length))
+        all_characters = ascii_letters + digits
+        password = "".join(secrets.choice(all_characters) for password_position in range(self.__password_length))
+        
+        while not any(position.isdigit() for position in password):
+            password = "".join(secrets.choice(all_characters) for password_position in range(self.__password_length))
+        return password
         
     def __str__(self):
         return self.generate()

@@ -3,6 +3,7 @@ app/generator/__pycache__
 app/routes/__pycache__
 tests/test_code.py
 app/__pycache__
+.pytest_cache
 develop_api
 ideas.txt
 .vscode
