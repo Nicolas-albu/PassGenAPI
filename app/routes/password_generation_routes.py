@@ -18,6 +18,7 @@ async def password_generator(password_definitions: PasswordModel) -> dict:
     return {
             "password": PasswordGenerator(
                 password_length=password_definitions.password_length,
+                number_of_passwords=password_definitions.number_of_passwords,
                 types_of_characters=password_definitions.types_of_characters
                 ).generate_password()
             }
