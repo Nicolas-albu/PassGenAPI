@@ -1,7 +1,11 @@
-.vscode
-develop_api
-app/__pycache__
+app/routes/models/__pycache__
 app/generator/__pycache__
 app/routes/__pycache__
-app/routes/models/__pycache__
+tests/rest_of_code.py
+tests/test_code.py
+tests/__pycache__
+app/__pycache__
+.pytest_cache
+develop_api
 ideas.txt
+.vscode
