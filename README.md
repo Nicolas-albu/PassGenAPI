@@ -6,6 +6,13 @@
 
   Atualmente, a PassGenAPI está na versão **1.0.0**.
 
+  #### :earth_americas: **Idioma da documentação:**
+  A documentação da PassGenAPI está disponível em inglês e português. Para escolher o idioma desejado, basta clicar no idioma seguinte. Todos os exemplos de código, instruções e explicações estarão disponíveis no idioma escolhido para facilitar a compreensão e utilização da API.
+
+  **USA** [**English**](README-en.md)
+
+  **BRA** [**Português**](README.md)
+
 ## :computer: **Como usar**
 
 Para utilizar a **PassGenAPI**, você deve enviar uma solicitação HTTP POST para o endpoint "**https://pass-gen-api.vercel.app/password_definitions**". A API aceita os seguintes parâmetros:
