@@ -1,9 +1,10 @@
 
 <img src="docs\OpenGenAPI-GIF.gif" alt="OpenGenAPI">
 
-# :globe_with_meridians: **PassGenAPI**
+# :globe_with_meridians: **PassGenAPI** 
   A :globe_with_meridians:**PassGenAPI** é uma ferramenta divertida e útil para gerar senhas fortes:lock::muscle: e seguras para você e seus usuários!:man_technologist: Com a nossa API, você pode facilmente criar senhas aleatórias com vários comprimentos e níveis de complexidade. Escolha entre caracteres especiais, letras maiúsculas e minúsculas, números e em breve muito mais para personalizar a sua senha! Além disso, você pode integrar facilmente a nossa API com outras ferramentas para tornar a sua aplicação ainda mais segura e confiável. Então, por que usar senhas fáceis de adivinhar quando você pode ter senhas fortes e seguras com a PassGenAPI? 💂🏼‍♂️
 
+  Atualmente, a PassGenAPI está na versão **1.0.0**.
 
 ## :computer: **Como usar**
 
@@ -117,6 +118,8 @@ A :globe_with_meridians:**PassGenAPI** foi desenvolvida com um foco em alto dese
 Além disso, a PassGenAPI foi testada com **Pytest** para garantir a qualidade do código e da aplicação. Os testes automatizados foram uma parte importante do processo de desenvolvimento de software, pois ajudaram a identificar problemas precocemente.
 
 Além disso, estamos sempre trabalhando em novas implementações para oferecer ainda mais opções personalizáveis para a geração de senhas. Então, fique de olho nas atualizações futuras da PassGenAPI para ter acesso a novas funcionalidades e tornar a sua aplicação ainda mais segura e confiável! :lock:
+
+Atualmente, a PassGenAPI está na versão **1.0.0**.
 
 ## :rotating_light: **Licença**
 
