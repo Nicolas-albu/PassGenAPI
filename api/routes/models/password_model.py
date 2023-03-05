@@ -1,3 +1,5 @@
+from typing import Union
+
 from pydantic import BaseModel
 
 
@@ -11,4 +13,4 @@ class PasswordModel(BaseModel):
     """
     password_length: int = 12
     number_of_passwords: int = 1
-    types_of_characters: list[str] | str | None = ["digits", "lowercase", "symbols", "uppercase"]
+    types_of_characters: Union[list[str], str, None] = ["digits", "lowercase", "symbols", "uppercase"]
