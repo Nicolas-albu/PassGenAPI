@@ -5,7 +5,7 @@
   A :globe_with_meridians:**PassGenAPI** é uma ferramenta divertida e útil para gerar senhas fortes:lock::muscle: e seguras para você e seus usuários!:man_technologist: Com a nossa API, você pode facilmente criar senhas aleatórias com vários comprimentos e níveis de complexidade. Escolha entre caracteres especiais, letras maiúsculas e minúsculas, números e em breve muito mais para personalizar a sua senha! Além disso, você pode integrar facilmente a nossa API com outras ferramentas para tornar a sua aplicação ainda mais segura e confiável. Então, por que usar senhas fáceis de adivinhar quando você pode ter senhas fortes e seguras com a PassGenAPI? 💂🏼‍♂️
 
 
-## **Como usar**
+## :computer: **Como usar**
 
 Para utilizar a **PassGenAPI**, você deve enviar uma solicitação HTTP POST para o endpoint "**https://pass-gen-api.vercel.app/password_definitions**". A API aceita os seguintes parâmetros:
 
@@ -13,7 +13,7 @@ Para utilizar a **PassGenAPI**, você deve enviar uma solicitação HTTP POST pa
 **number_of_passwords**: define o número de senhas que serão geradas. O valor padrão é 1. <br>
 **type_of_characters**: define o tipo de caracteres que serão utilizados para gerar a senha. <br>As opções disponíveis são **lowercase**, **uppercase**, **digits** e **symbols**. O valor padrão é todos os tipos de caracteres.
 
-### **Exemplo de uso em Python com requests**
+### **Exemplo de uso em Python com requests:**
 
 ```console
 $ pip install requests
@@ -44,7 +44,7 @@ print(response.json()['password'])
 
 ```
 
-### **Exemplo de uso em Python com urllib**
+### **Exemplo de uso em Python com urllib:**
 
 ```python
 import urllib.request
@@ -77,8 +77,7 @@ print(response_data.json()['password'])
 
 ```
 
-
-## **Instalação**
+## :man_technologist: **Instalação**
 
 Para utilizar a PassGenAPI localmente, siga os passos abaixo:
 
@@ -111,3 +110,14 @@ Para utilizar a PassGenAPI localmente, siga os passos abaixo:
     ```console
     $ pip install -r requirements.txt
     ```
+
+## :pushpin: **Sobre a PassGenAPI**
+A :globe_with_meridians:**PassGenAPI** foi desenvolvida com um foco em alto desempenho, utilizando o framework web **FastAPI**:zap:. Com a utilização do FastAPI, a API oferece uma performance significativamente superior em relação a outras ferramentas similares, garantindo uma experiência ágil e eficiente ao usuário. O FastAPI é conhecido por sua eficiência e facilidade de uso, permitindo que a PassGenAPI seja desenvolvida de forma mais rápida e escalável. Além disso, o FastAPI fornece recursos como documentação automática e validação de tipos, tornando a criação e manutenção da API mais fácil e menos propensa a erros:heavy_check_mark:.
+
+Além disso, a PassGenAPI foi testada com **Pytest** para garantir a qualidade do código e da aplicação. Os testes automatizados foram uma parte importante do processo de desenvolvimento de software, pois ajudaram a identificar problemas precocemente.
+
+Além disso, estamos sempre trabalhando em novas implementações para oferecer ainda mais opções personalizáveis para a geração de senhas. Então, fique de olho nas atualizações futuras da PassGenAPI para ter acesso a novas funcionalidades e tornar a sua aplicação ainda mais segura e confiável! :lock:
+
+## :rotating_light: **Licença**
+
+A PassGenAPI está sob a licença **Apache-2.0 license**, o que significa que você pode usar, modificar e distribuir o código-fonte da API para fins pessoais e comerciais. No entanto, você deve incluir a nota de direito autoral na sua distribuição e garantir que a mesma licença seja aplicada às suas modificações. A licença Apache-2.0 também inclui uma renúncia de garantias e uma limitação de responsabilidade, portanto, certifique-se de lê-la cuidadosamente antes de usar a PassGenAPI em seu projeto.
