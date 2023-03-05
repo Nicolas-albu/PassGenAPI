@@ -1,12 +1,12 @@
 from fastapi import APIRouter
 
 from app.generator.password_generator import PasswordGenerator
-from app.routes.models.password_model import Password
+from app.routes.models.password_model import PasswordModel
 
 password_routes = APIRouter()
 
 @password_routes.post("/password_definitions/")
-async def password_generator(password_definitions: Password) -> dict:
+async def password_generator(password_definitions: PasswordModel) -> dict:
     """Router POST method to create a new password with the passed parameters
 
     Args:
@@ -19,5 +19,5 @@ async def password_generator(password_definitions: Password) -> dict:
             "password": PasswordGenerator(
                 password_length=password_definitions.password_length,
                 types_of_characters=password_definitions.types_of_characters
-                ).generate()
+                ).generate_password()
             }

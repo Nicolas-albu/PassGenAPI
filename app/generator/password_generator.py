@@ -13,86 +13,51 @@ class PasswordGenerator:
             * types_of_characters (list[str]): Character types of characters, default equals ["digits", "lowercase", "uppercase"]
         """
         self.__password_length: int = password_length
-        self.__types_of_characters: list[str] | str = types_of_characters
-        
-        character_sets: dict[tuple[str], str] = {
-            ('uppercase',): ascii_uppercase,
-            ("lowercase",): ascii_lowercase,
-            ("digits",): digits,
-            ("uppercase", "lowercase"): ascii_letters,
-            ("lowercase", "uppercase"): ascii_letters,
+        self.__types_of_characters: list[str] = types_of_characters if isinstance(types_of_characters, list) else [types_of_characters]
+        self.__types_of_characters.sort()
+        self.__all_characters: str = ascii_letters + digits
+        self.__character_sets: dict[tuple[str], str] = {
             ("digits", "uppercase"): ascii_uppercase + digits,
             ("digits", "lowercase"): ascii_lowercase + digits,
-            ("uppercase", "digits"): ascii_uppercase + digits,
-            ("lowercase", "digits"): ascii_lowercase + digits,
+            ("lowercase", "uppercase"): ascii_letters,
+            ("uppercase",): ascii_uppercase,
+            ("lowercase",): ascii_lowercase,
+            ("digits",): digits,
         }
         #stores the characters associated with the key
-        self.__characters: str = character_sets.get(tuple(self.__types_of_characters) 
-                                                    if isinstance(self.__types_of_characters, list) 
-                                                    else (self.__types_of_characters,))
+        self.__characters: str = self.__character_sets.get(tuple(self.__types_of_characters), self.__all_characters)
         
-    def generate(self) -> str:
+    def generate_password(self) -> str:
         """call this function to generate a random password with parameters defined in PasswordGenerator.__init__
 
         Returns:
             str: password generated
         """
-        generation_cases: dict[tuple[str], callable] = {
-            ("uppercase",): self.generate_with_uppercase,
-            ("lowercase",): self.generate_with_lowercase,
-            ("digits",): self.generate_with_digits,
-            ("lowercase", "uppercase"): self.generate_with_letters,
-            ("uppercase", "lowercase"): self.generate_with_letters,
-            ("digits", "uppercase"): self.generate_with_uppercase,
-            ("digits", "lowercase"): self.generate_with_lowercase,
-            ("uppercase", "digits"): self.generate_with_uppercase,
-            ("lowercase", "digits"): self.generate_with_lowercase,
+        generation_cases: dict = {
+            tuple(self.__types_of_characters): self.generate_defined_password,
         }
-        #returns the method call associated with the key, otherwise returns self.generate_with_all_characters
-        return generation_cases.get(tuple(self.__types_of_characters) 
-                                    if isinstance(self.__types_of_characters, list) 
-                                    else (self.__types_of_characters,), self.generate_with_all_characters)()
+        #returns the method call associated with the key, otherwise returns self.generate_full_character_password
+        return generation_cases.get(tuple(self.__types_of_characters), self.generate_full_character_password)()
     
-
-    def generate_with_uppercase(self) -> str:
-        """method to generate password only with characters uppercase
+    def generate_defined_password(self) -> str:
+        """method to generate passwords with definitions of characters of method generate_password()
 
         Returns:
-            str: password with uppercase
-        """
+            str: password generated
+        """      
         return "".join(secrets.choice(self.__characters) for password_position in range(self.__password_length))
     
-    def generate_with_lowercase(self) -> str:
-        """method to generate password only with characters lowercase
-
-        Returns:
-            str: password with lowercase
-        """
-        return "".join(secrets.choice(self.__characters) for password_position in range(self.__password_length))
-    
-    def generate_with_letters(self) -> str:
-        return "".join(secrets.choice(self.__characters) for password_position in range(self.__password_length))
-    
-    def generate_with_digits(self) -> str:
-        """method to generate password only with digits
-
-        Returns:
-            str: _description_
-        """
-        return "".join(secrets.choice(self.__characters) for password_position in range(self.__password_length))
-    
-    def generate_with_all_characters(self) -> str:
+    def generate_full_character_password(self) -> str:
         """method to generate password with all characters
 
         Returns:
             str: passwords generated with all characters
         """
-        all_characters = ascii_letters + digits
-        password = "".join(secrets.choice(all_characters) for password_position in range(self.__password_length))
+        __password: str = "".join(secrets.choice(self.__all_characters) for password_position in range(self.__password_length))
         
-        while not any(position.isdigit() for position in password):
-            password = "".join(secrets.choice(all_characters) for password_position in range(self.__password_length))
-        return password
+        while not any(position.isdigit() for position in __password):
+            __password = "".join(secrets.choice(self.__all_characters) for password_position in range(self.__password_length))
+        return __password
         
     def __str__(self):
-        return self.generate()
+        return self.generate_password()

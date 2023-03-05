@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 
 
-class Password(BaseModel):
+class PasswordModel(BaseModel):
     """JSON parameter model class to generate password
 
     Args:
