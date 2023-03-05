@@ -7,7 +7,7 @@ class PasswordModel(BaseModel):
     Args:
         * BaseModel (pydantic.BaseModel): Password template for the parameters of a JSON request from endpoint /password_definitions/
         * password_length (int): Length of the password
-        * type_of_characters (list[str] | None): Character types, default equals ["digits", "lowercase", "uppercase"]
+        * type_of_characters (list[str] | None): Character types, default equals ["digits", "lowercase", "symbols", "uppercase"]
     """
     password_length: int
-    types_of_characters: list[str] | str | None = ["digits", "lowercase", "uppercase"]
+    types_of_characters: list[str] | str | None = ["digits", "lowercase", "symbols", "uppercase"]

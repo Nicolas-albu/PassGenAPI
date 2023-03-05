@@ -1,5 +1,6 @@
 import secrets
-from string import ascii_letters, ascii_lowercase, ascii_uppercase, digits
+from string import (ascii_letters, ascii_lowercase, ascii_uppercase, digits,
+                    punctuation)
 
 
 class PasswordGenerator:
@@ -10,18 +11,20 @@ class PasswordGenerator:
 
         Args:
             * password_length (int): Length of the password
-            * types_of_characters (list[str]): Character types of characters, default equals ["digits", "lowercase", "uppercase"]
+            * types_of_characters (list[str]): Character types of characters, default equals ["digits", "lowercase", "symbols", "uppercase"]
         """
         self.__password_length: int = password_length
         self.__types_of_characters: list[str] = types_of_characters if isinstance(types_of_characters, list) else [types_of_characters]
         self.__types_of_characters.sort()
-        self.__all_characters: str = ascii_letters + digits
+        
+        self.__all_characters: str = ascii_letters + digits + punctuation
         self.__character_sets: dict[tuple[str], str] = {
             ("digits", "uppercase"): ascii_uppercase + digits,
             ("digits", "lowercase"): ascii_lowercase + digits,
             ("lowercase", "uppercase"): ascii_letters,
             ("uppercase",): ascii_uppercase,
             ("lowercase",): ascii_lowercase,
+            ("symbols",): punctuation,
             ("digits",): digits,
         }
         #stores the characters associated with the key
@@ -54,8 +57,9 @@ class PasswordGenerator:
             str: passwords generated with all characters
         """
         __password: str = "".join(secrets.choice(self.__all_characters) for password_position in range(self.__password_length))
-        
-        while not any(position.isdigit() for position in __password):
+
+        while not (any(position.isdigit() for position in __password) and 
+                   any(symbol in punctuation for symbol in __password)):
             __password = "".join(secrets.choice(self.__all_characters) for password_position in range(self.__password_length))
         return __password
         
