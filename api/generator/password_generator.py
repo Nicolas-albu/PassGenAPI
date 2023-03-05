@@ -1,12 +1,13 @@
 import secrets
 from string import (ascii_letters, ascii_lowercase, ascii_uppercase, digits,
                     punctuation)
+from typing import Union
 
 
 class PasswordGenerator:
     """Class for generating passwords"""
     
-    def __init__(self, password_length: int, types_of_characters: list[str] | str, number_of_passwords: int):
+    def __init__(self, password_length: int, types_of_characters: Union[list[str], str], number_of_passwords: int):
         """parameterize password
 
         Args:
@@ -31,7 +32,7 @@ class PasswordGenerator:
         #stores the characters associated with the key
         self.__characters: str = self.__character_sets.get(tuple(self.__types_of_characters), self.__all_characters)
         
-    def generate_password(self) -> list[str] | str:
+    def generate_password(self) -> Union[list[str], str]:
         """call this method to generate a random password with parameters defined in PasswordGenerator.__init__
 
         Returns:

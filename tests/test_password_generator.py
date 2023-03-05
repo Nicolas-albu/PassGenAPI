@@ -1,6 +1,6 @@
 from string import punctuation
 
-from app.generator.password_generator import PasswordGenerator
+from api.generator.password_generator import PasswordGenerator
 
 
 def test_generate_full_character_password():

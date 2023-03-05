@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 
-from app.generator.password_generator import PasswordGenerator
-from app.routes.models.password_model import PasswordModel
+from api.generator.password_generator import PasswordGenerator
+from api.routes.models.password_model import PasswordModel
 
 password_routes = APIRouter()
 
