@@ -1,6 +1,5 @@
 import secrets
-from string import (ascii_letters, ascii_lowercase, ascii_uppercase, digits,
-                    punctuation)
+from string import ascii_lowercase, ascii_uppercase, digits, punctuation
 from typing import Union
 
 
@@ -18,28 +17,30 @@ class PasswordGenerator:
             * types_of_characters (list[str]): Character types of characters, 
               default equals ["digits", "lowercase", "symbols", "uppercase"]
         """
+        #Parameter validation
+        if types_of_characters is None:
+            types_of_characters = ["digits", "lowercase", "symbols", "uppercase"]
+        
+        #attribute definition
         self.__password_length: int = password_length
         self.__number_of_passwords: int = number_of_passwords
         self.__types_of_characters: tuple[str] = tuple(sorted(types_of_characters 
                                                  if isinstance(types_of_characters, list) 
                                                  else [types_of_characters]))
-        self.__all_characters: str = ascii_letters + digits + punctuation
-        
-        self.__character_sets: dict[tuple[str], str] = {
-            ("digits", "uppercase"): ascii_uppercase + digits,
-            ("digits", "lowercase"): ascii_lowercase + digits,
-            ("digits", "symbols"): digits + punctuation,
-            ("symbols", "digits"): digits + punctuation,
-            ("lowercase", "uppercase"): ascii_letters,
-            ("uppercase",): ascii_uppercase,
-            ("lowercase",): ascii_lowercase,
-            ("symbols",): punctuation,
-            ("digits",): digits,
+        self.__character_sets: dict[str, str] = {
+            "uppercase": ascii_uppercase,
+            "lowercase": ascii_lowercase,
+            "symbols": punctuation,
+            "digits": digits
         }
-        #stores the characters associated with the key
-        self.__character_cases: str = self.__character_sets.get(self.__types_of_characters, 
-                                                                self.__all_characters)
+        self.__character_final: str = ""
         
+        #get all groups of characters from the type_of_characters parameter
+        parameter_character_sets: list[Union[str, None]] = [self.__character_sets.get(character_parameter) 
+                                                            for character_parameter in self.__types_of_characters]
+        #concatenate all character sets associated with the braces in __character_final
+        self.__character_final = ''.join(filter(None, parameter_character_sets))
+
     def __verify_has_digits_lower_upper(self, password: str) -> bool:
         """method private to check if password has digits, characters lower and upper
 
@@ -92,7 +93,7 @@ class PasswordGenerator:
         Returns:
             str: password generated
         """      
-        return "".join(secrets.choice(self.__character_cases) 
+        return "".join(secrets.choice(self.__character_final) 
                        for password_position in range(self.__password_length))
 
     def generate_full_character_password(self) -> str:
@@ -101,7 +102,7 @@ class PasswordGenerator:
         Returns:
             str: passwords generated with all characters
         """
-        __password_with_all_characters: str = "".join(secrets.choice(self.__all_characters) 
+        __password_with_all_characters: str = "".join(secrets.choice(self.__character_final) 
                                                     for password_position in range(self.__password_length))
 
         #4 is the minimum quantity to have all the characters
@@ -110,7 +111,7 @@ class PasswordGenerator:
             while not (self.__verify_has_digits_lower_upper(__password_with_all_characters) and 
                        self.__verify_has_symbols(__password_with_all_characters)):
                 
-                __password_with_all_characters = "".join(secrets.choice(self.__all_characters) 
+                __password_with_all_characters = "".join(secrets.choice(self.__character_final) 
                                                         for password_position in range(self.__password_length))                                            
         return __password_with_all_characters
         
