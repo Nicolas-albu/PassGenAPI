@@ -146,7 +146,7 @@ Além disso, a PassGenAPI foi testada com **Pytest** para garantir a qualidade d
 
 Além disso, estamos sempre trabalhando em novas implementações para oferecer ainda mais opções personalizáveis para a geração de senhas. Então, fique de olho nas atualizações futuras da PassGenAPI para ter acesso a novas funcionalidades e tornar a sua aplicação ainda mais segura e confiável! :lock:
 
-Atualmente, a PassGenAPI está na versão **1.0.0**.
+Atualmente, a PassGenAPI está na versão **1.1.4**.
 
 ## :rotating_light: **Licença**
 
