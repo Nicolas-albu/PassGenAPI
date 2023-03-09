@@ -119,6 +119,29 @@ Para utilizar a PassGenAPI localmente, siga os passos abaixo:
     $ pip install -r requirements.txt
     ```
 
+
+## :hammer_and_wrench: Implementações
+
+| Hashes |
+| --- |
+| [ ] MD5 |
+| [ ] SHA-1 |
+| [ ] SHA-2 |
+| [ ] SHA-3 |
+
+| Chave Simétrica |
+| --- |
+| [ ] DES (Data Encryption Standard) |
+| [ ] 3DES (Triple Data Encryption Standard) |
+| [ ] AES (Advanced Encryption Standard) |
+
+
+| Chave Assimétrica |
+| --- |
+| [ ] RSA |
+| [ ] Diffie-Hellman |
+| [ ] ECC (Elliptic Curve Cryptography) |
+
 ## :pushpin: **Sobre a PassGenAPI**
 A :globe_with_meridians:**PassGenAPI** foi desenvolvida com um foco em alto desempenho, utilizando o framework web **FastAPI**:zap:. Com a utilização do FastAPI, a API oferece uma performance significativamente superior em relação a outras ferramentas similares, garantindo uma experiência ágil e eficiente ao usuário. O FastAPI é conhecido por sua eficiência e facilidade de uso, permitindo que a PassGenAPI seja desenvolvida de forma mais rápida e escalável. Além disso, o FastAPI fornece recursos como documentação automática e validação de tipos, tornando a criação e manutenção da API mais fácil e menos propensa a erros:heavy_check_mark:.
 
