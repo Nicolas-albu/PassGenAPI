@@ -3,7 +3,6 @@ api/generator/__pycache__
 api/routes/__pycache__
 tests/rest_of_code.py
 tests/test_code.py
-test_perfomance.py
 tests/__pycache__
 api/__pycache__
 .pytest_cache
@@ -11,3 +10,4 @@ develop_api
 ideas.md
 .vscode
 .vercel
+.env
