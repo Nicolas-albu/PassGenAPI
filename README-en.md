@@ -1,27 +1,88 @@
-
 <img src="docs\OpenGenAPI-GIF.gif" alt="OpenGenAPI">
 
-# :globe_with_meridians: **PassGenAPI** 
-  The :globe_with_meridians:**PassGenAPI** is a fun and useful tool to generate passwords that are strong:lock::muscle: and safe for you and your users!:man_technologist: With our API, you can easily create random passwords with various lengths and levels of complexity. Choose from special characters, uppercase and lowercase letters, numbers and soon much more to customize your password! Furthermore, you can easily integrate our API with other tools to make your application even more secure and reliable. So why use easy to guess passwords when you can have strong and secure passwords with PassGenAPI? 💂🏼‍♂️
+# :globe_with_meridians: **PassGenAPI**
+  The :globe_with_meridians:**PassGenAPI** is a fun and useful tool to generate strong:lock::muscle: and secure passwords for you and your users!:man_technologist: With our API, you can easily create **random passwords* * with various lengths and levels of complexity and **hashes**. Choose from special characters, uppercase and lowercase letters, numbers and soon much more to customize your password! Furthermore, you can easily integrate our API with other tools to make your application even more secure and reliable. So why use easy to guess passwords when you can have strong and secure passwords with PassGenAPI? 💂🏼‍♂️
 
-  Currently, PassGenAPI is at version **1.0.0**.
+  Currently, PassGenAPI is at version **1.1.4**.
 
-  #### :earth_americas: **Documentation language:**
-  PassGenAPI documentation is available in English and Portuguese. To choose the desired language, just click on the next language. All code examples, instructions, and explanations will be available in your chosen language to make the API easier to understand and use.
+  #### :earth_americas: **Language of documents:**
+  PassGenAPI documentation is available in English and Portuguese. To choose the desired language, just click on the next language. All code examples, instructions, and controls are available in your chosen language to make the API easier to understand and use.
 
   **USA** [**English**](README-en.md)
 
-  **BRA** [**Português**](README.md)
+  **BRA** [**Portuguese**](README.md)
 
-## :computer: **How to use**
+## **What can I use PassGenAPI for?**
 
-To use **PassGenAPI**, you must send an HTTP POST request to the endpoint "**https://pass-gen-api.vercel.app/password_definitions**". The API accepts the following parameters:
+| **Features** | **Description** |
+| :---: | --- |
+| **password** | generation of personalized passwords with various lengths, number of passwords and specific characters such as symbols, lowercase, uppercase and digits |
+| **hash** | generation of hashes of different types, such as MD5, SHA-1, SHA-2 and SHA-3
 
-**password_length**: defines the length of the password. The default value is 12. <br>
-**number_of_passwords**: defines the number of passwords that will be generated. The default value is 1. <br>
-**type_of_characters**: defines the type of characters that will be used to generate the password. <br>The available options are **lowercase**, **uppercase**, **digits** and **symbols**. The default value is all character types.
+## :computer: **How ​​to use**
 
-### **Example usage in Python with requests:**
+You can use a PassGenAPI to
+
+<details>
+<summary> <b>generating random passwords</b> </summary>
+
+Send an HTTP POST request to the "**pass-gen-api.vercel.app/password**" endpoint. The API accepts the following parameters:
+
+| Parameters | Type | Description | Options | Default Value |
+| :---: | :---: | --- | --- | :---: |
+| **password_length** | **int** | sets password length | | 12 |
+| **number_of_passwords** | **int** | defines the number of passwords to be generated | | 1 |
+| **type_of_characters** | **str** \| **list[str]** | defines the type of characters that will be used to generate the password | **lowercase**, **uppercase**, **digits** and **symbols** | all types of characters |
+
+<!--[Want to see an example of using these parameters?](#com-requests)-->
+
+<details>
+<summary> <b>Do you want to see an example of using these parameters?</b> </summary>
+
+```python
+import json
+import requests
+
+# Set the API endpoint
+endpoint = "https://pass-gen-api.vercel.app/password"
+
+# Define the data that will be sent in JSON format
+password_data = {
+    "password_length": 10,
+    "number_of_passwords": 3,
+    "type_of_characters": ["digits", "lowercase"]
+}
+
+# Convert data to JSON format
+json_password_data = json.dumps(password_data)
+
+# Send the POST request to the API endpoint with the data in JSON
+response = requests.post(url=endpoint, data=json_password_data)
+
+# Display the API response
+print(response.json()['password'])
+```
+</details>
+
+</details>
+
+<details>
+<summary><b>hash generation</b></summary>
+
+Send an HTTP POST request to the "**pass-gen-api.vercel.app/hash**" endpoint. The API accepts the following parameters:
+
+| Parameters | Type | Description | Options |
+| :---: | :---: | --- | :---: |
+| **data_for_encrypt** | **str** | defines the data that will be encrypted |
+| **hash_type** | **str** | defines the type of hash to be used | **sha1**, **sha224**, **sha256**, **sha384**, **sha3-256** and **md5** |
+
+</details>
+
+
+<details>
+<summary> <b>Example requests</b> </summary>
+
+### **With requests:**
 
 ```console
 $ pip install requests
@@ -31,10 +92,10 @@ $ pip install requests
 import json
 import requests
 
-# Defines the API endpoint
-endpoint = "https://pass-gen-api.vercel.app/password_definitions"
+# Set the API endpoint
+endpoint = "https://pass-gen-api.vercel.app/password"
 
-# Defines the data that will be sent in JSON format
+# Define the data that will be sent in JSON format
 password_data = {
     "password_length": 10,
     "number_of_passwords": 3,
@@ -47,21 +108,21 @@ json_password_data = json.dumps(password_data)
 # Send the POST request to the API endpoint with the data in JSON
 response = requests.post(url=endpoint, data=json_password_data)
 
-# Displays the API response
+# Display the API response
 print(response.json()['password'])
 
 ```
 
-### **Example usage in Python with urllib:**
+### **With urllib:**
 
 ```python
 import urllib.request
 import json
 
-# Defines the API endpoint
-endpoint = "https://pass-gen-api.vercel.app/password_definitions"
+# Set the API endpoint
+endpoint = "https://pass-gen-api.vercel.app/password"
 
-# Defines the data that will be sent in JSON format
+# Define the data that will be sent in JSON format
 password_data = {
     "password_length": 10,
     "number_of_passwords": 3,
@@ -71,19 +132,20 @@ password_data = {
 # Convert data to JSON format
 json_password_data = json.dumps(password_data).encode("utf8")
 
-# Creates a POST request with the data in JSON
+# Create a POST request with the data in JSON
 request = urllib.request.Request(url=endpoint, data=json_password_data)
 
-# Sends the POST request to the API endpoint
+# Send the POST request to the API endpoint
 response = urllib.request.urlopen(request)
 
-# Reads the API response and decodes it from JSON format
+# Read the API response and decode it from JSON format
 response_data = json.loads(response.read().decode('utf8'))
 
-# Displays the API response
+# Display the API response
 print(response_data.json()['password'])
 
 ```
+</details>
 
 ## :man_technologist: **Installation**
 
@@ -126,7 +188,7 @@ Furthermore, PassGenAPI has been tested with **Pytest** to ensure code and appli
 
 Additionally, we are always working on new implementations to provide even more customizable options for password generation. So, keep an eye out for future updates to PassGenAPI to gain access to new features and make your application even more secure and reliable! :lock:
 
-Currently, PassGenAPI is at version **1.0.0**.
+Currently, PassGenAPI is at version **1.1.4**.
 
 ## :rotating_light: **License**
 
