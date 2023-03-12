@@ -5,8 +5,8 @@ from api.routes.models.password_model import PasswordModel
 
 password_routes = APIRouter()
 
-@password_routes.post("/password_definitions/")
-async def password_generator(password_definitions: PasswordModel) -> dict:
+@password_routes.post("/password/")
+async def post_password_generator(password_definitions: PasswordModel) -> dict:
     """Router POST method to create a new password with the passed parameters
 
     Args:
@@ -17,8 +17,8 @@ async def password_generator(password_definitions: PasswordModel) -> dict:
     """
     return {
             "password": PasswordGenerator(
-                password_length=password_definitions.password_length,
-                number_of_passwords=password_definitions.number_of_passwords,
-                types_of_characters=password_definitions.types_of_characters
-                ).generate_password()
+                        password_length=password_definitions.password_length,
+                        number_of_passwords=password_definitions.number_of_passwords,
+                        types_of_characters=password_definitions.types_of_characters
+                        ).generate_password()
             }

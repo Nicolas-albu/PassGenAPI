@@ -7,6 +7,9 @@ tests/__pycache__
 api/__pycache__
 .pytest_cache
 develop_api
-ideas.txt
+ideas.md
 .vscode
 .vercel
+.env
+README-dev.md
+README-en.md
