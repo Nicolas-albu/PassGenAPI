@@ -31,8 +31,8 @@ Enviar uma solicitação HTTP POST para o endpoint "**pass-gen-api.vercel.app/pa
 
 |    Parâmetros   | Tipo | Descrição  | Opções | Valor Padrão |
 |      :---:      | :---:  |    ---     |  ---   |    :---:     |
-| **password_length** | **int** | define o comprimento da senha | | O valor padrão é 12 | 
-| **number_of_passwords** | **int** | define o número de senhas que serão geradas | | O valor padrão é 1 |
+| **password_length** | **int** | define o comprimento da senha | | 12 | 
+| **number_of_passwords** | **int** | define o número de senhas que serão geradas | | 1 |
 | **type_of_characters** | **str** \| **list[str]** | define o tipo de caracteres que serão utilizados para gerar a senha | **lowercase**, **uppercase**, **digits** e **symbols** | todos os tipos de caracteres |
 
 <!--[Quer ver um exemplo da utilização destes parâmetros?](#com-requests)-->
