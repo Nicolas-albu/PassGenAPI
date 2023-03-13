@@ -4,7 +4,12 @@
 # :globe_with_meridians: **PassGenAPI** 
   A :globe_with_meridians:**PassGenAPI** é uma ferramenta divertida e útil para gerar senhas fortes:lock::muscle: e seguras para você e seus usuários!:man_technologist: Com a nossa API, você pode facilmente criar **senhas aleatórias** com vários comprimentos e níveis de complexidade e **hashes**. Escolha entre caracteres especiais, letras maiúsculas e minúsculas, números e em breve muito mais para personalizar a sua senha! Além disso, você pode integrar facilmente a nossa API com outras ferramentas para tornar a sua aplicação ainda mais segura e confiável. Então, por que usar senhas fáceis de adivinhar quando você pode ter senhas fortes e seguras com a PassGenAPI? 💂🏼‍♂️
 
-  Atualmente, a PassGenAPI está na versão **1.1.4**.
+<div align="center" alt="contatos">
+  <a href="https://github.com/Nicolas-albu/PassGenAPI/blob/main/LICENSE" target="_blank"><img src="https://img.shields.io/github/license/Nicolas-albu/PassGenAPI?style=for-the-badge" target="_blank"></a>
+  <img src="https://img.shields.io/badge/version-1.1.4-blue?style=for-the-badge" target="_blank">
+</div>
+
+##
 
   #### :earth_americas: **Idioma da documentação:**
   A documentação da PassGenAPI está disponível em inglês e português. Para escolher o idioma desejado, basta clicar no idioma seguinte. Todos os exemplos de código, instruções e explicações estarão disponíveis no idioma escolhido para facilitar a compreensão e utilização da API.
@@ -195,3 +200,5 @@ Atualmente, a PassGenAPI está na versão **1.1.4**.
 ## :rotating_light: **Licença**
 
 A PassGenAPI está sob a licença **Apache-2.0 license**, o que significa que você pode usar, modificar e distribuir o código-fonte da API para fins pessoais e comerciais. No entanto, você deve incluir a nota de direito autoral na sua distribuição e garantir que a mesma licença seja aplicada às suas modificações. A licença Apache-2.0 também inclui uma renúncia de garantias e uma limitação de responsabilidade, portanto, certifique-se de lê-la cuidadosamente antes de usar a PassGenAPI em seu projeto.
+
+<img src="https://img.shields.io/badge/version-1.1.4-blue?style=for-the-badge" target="_blank">
