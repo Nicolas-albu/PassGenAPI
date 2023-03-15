@@ -18,16 +18,12 @@
 
   **BRA** [**Português**](README.md)
 
-##
-
 ## :page_with_curl: Sumário da Documentação
 - [:thinking: **Para o que posso utilizar a PassGenAPI?**](#para-o-que-posso-utilizar-a-passgenapi)
 - [:computer: **Como usar**](#computer-como-usar)
 - [:man_technologist: **Instalação**](#man_technologist-instalação)
 - [:pushpin: **Sobre a PassGenAPI**](#pushpin-sobre-a-passgenapi)
 - [:rotating_light: **Licença**](#rotating_light-licença)
-
-##
 
 ## :thinking: **Para o que posso utilizar a PassGenAPI?**
 
