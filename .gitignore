@@ -12,3 +12,4 @@ ideas.md
 .vercel
 .env
 README-dev.md
+requirements_dev.txt

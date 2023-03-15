@@ -1,5 +1,5 @@
 
-<img src="docs\OpenGenAPI-GIF.gif" alt="OpenGenAPI">
+<img src="docs\PassGenAPI-GIF.gif" alt="OpenGenAPI">
 
 # :globe_with_meridians: **PassGenAPI** 
   A :globe_with_meridians:**PassGenAPI** é uma ferramenta divertida e útil para gerar senhas fortes:lock::muscle: e seguras para você e seus usuários!:man_technologist: Com a nossa API, você pode facilmente criar **senhas aleatórias** com vários comprimentos e níveis de complexidade e **hashes**. Escolha entre caracteres especiais, letras maiúsculas e minúsculas, números e em breve muito mais para personalizar a sua senha! Além disso, você pode integrar facilmente a nossa API com outras ferramentas para tornar a sua aplicação ainda mais segura e confiável. Então, por que usar senhas fáceis de adivinhar quando você pode ter senhas fortes e seguras com a PassGenAPI? 💂🏼‍♂️
@@ -18,7 +18,14 @@
 
   **BRA** [**Português**](README.md)
 
-## **Para o que posso utilizar a PassGenAPI?**
+## :page_with_curl: Sumário da Documentação
+- [:thinking: **Para o que posso utilizar a PassGenAPI?**](#para-o-que-posso-utilizar-a-passgenapi)
+- [:computer: **Como usar**](#computer-como-usar)
+- [:man_technologist: **Instalação**](#man_technologist-instalação)
+- [:pushpin: **Sobre a PassGenAPI**](#pushpin-sobre-a-passgenapi)
+- [:rotating_light: **Licença**](#rotating_light-licença)
+
+## :thinking: **Para o que posso utilizar a PassGenAPI?**
 
 | **Funcionalidades** | **Descrição** |
 | :---: | --- |
@@ -30,7 +37,7 @@
 Você pode usar a PassGenAPI para 
 
 <details>
-<summary> <b>geração de senhas aleatórias</b> </summary>
+<summary> <b>:point_right:geração de senhas aleatórias</b> </summary>
 
 Enviar uma solicitação HTTP POST para o endpoint "**pass-gen-api.vercel.app/password**". A API aceita os seguintes parâmetros:
 
@@ -43,7 +50,7 @@ Enviar uma solicitação HTTP POST para o endpoint "**pass-gen-api.vercel.app/pa
 <!--[Quer ver um exemplo da utilização destes parâmetros?](#com-requests)-->
 
 <details>
-<summary> <b>Quer ver um exemplo da utilização destes parâmetros?</b> </summary>
+<summary> <b>:point_right:Quer ver um exemplo da utilização destes parâmetros?</b> </summary>
 
 ```python
 import json
@@ -73,7 +80,7 @@ print(response.json()['password'])
 </details>
 
 <details>
-<summary><b>geração de hashes</b></summary>
+<summary><b>:point_right:geração de hashes</b></summary>
 
 Enviar uma solicitação HTTP POST para o endpoint "**pass-gen-api.vercel.app/hash**". A API aceita os seguintes parâmetros:
 
@@ -86,7 +93,7 @@ Enviar uma solicitação HTTP POST para o endpoint "**pass-gen-api.vercel.app/ha
 
 
 <details>
-<summary> <b>Exemplo de requisições</b> </summary>
+<summary> <b>:point_right:Exemplo de requisições</b> </summary>
 
 ### **Com requests:**
 
@@ -116,39 +123,6 @@ response = requests.post(url=endpoint, data=json_password_data)
 
 # Exibe a resposta da API
 print(response.json()['password'])
-
-```
-
-### **Com urllib:**
-
-```python
-import urllib.request
-import json
-
-# Define o endpoint da API
-endpoint = "https://pass-gen-api.vercel.app/password"
-
-# Define os dados que serão enviados no formato JSON
-password_data = {
-    "password_length": 10,
-    "number_of_passwords": 3,
-    "type_of_characters": ["digits", "lowercase", "symbols"]
-}
-
-# Converte os dados para o formato JSON
-json_password_data = json.dumps(password_data).encode("utf8")
-
-# Cria uma solicitação POST com os dados em JSON
-request = urllib.request.Request(url=endpoint, data=json_password_data)
-
-# Envia a solicitação POST para o endpoint da API
-response = urllib.request.urlopen(request)
-
-# Lê a resposta da API e a decodifica do formato JSON
-response_data = json.loads(response.read().decode('utf8'))
-
-# Exibe a resposta da API
-print(response_data.json()['password'])
 
 ```
 </details>
@@ -195,10 +169,10 @@ Além disso, a PassGenAPI foi testada com **Pytest** para garantir a qualidade d
 
 Além disso, estamos sempre trabalhando em novas implementações para oferecer ainda mais opções personalizáveis para a geração de senhas. Então, fique de olho nas atualizações futuras da PassGenAPI para ter acesso a novas funcionalidades e tornar a sua aplicação ainda mais segura e confiável! :lock:
 
-Atualmente, a PassGenAPI está na versão **1.1.4**.
+<img src="https://img.shields.io/badge/version-1.1.4-blue?style=for-the-badge" target="_blank">
 
 ## :rotating_light: **Licença**
 
 A PassGenAPI está sob a licença **Apache-2.0 license**, o que significa que você pode usar, modificar e distribuir o código-fonte da API para fins pessoais e comerciais. No entanto, você deve incluir a nota de direito autoral na sua distribuição e garantir que a mesma licença seja aplicada às suas modificações. A licença Apache-2.0 também inclui uma renúncia de garantias e uma limitação de responsabilidade, portanto, certifique-se de lê-la cuidadosamente antes de usar a PassGenAPI em seu projeto.
 
-<img src="https://img.shields.io/badge/version-1.1.4-blue?style=for-the-badge" target="_blank">
+<a href="https://github.com/Nicolas-albu/PassGenAPI/blob/main/LICENSE" target="_blank"><img src="https://img.shields.io/github/license/Nicolas-albu/PassGenAPI?style=for-the-badge" target="_blank"></a>

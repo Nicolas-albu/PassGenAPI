@@ -1,18 +1,28 @@
-<img src="docs\OpenGenAPI-GIF.gif" alt="OpenGenAPI">
+<img src="docs\PassGenAPI-GIF.gif" alt="OpenGenAPI">
 
 # :globe_with_meridians: **PassGenAPI**
   The :globe_with_meridians:**PassGenAPI** is a fun and useful tool to generate strong:lock::muscle: and secure passwords for you and your users!:man_technologist: With our API, you can easily create **random passwords* * with various lengths and levels of complexity and **hashes**. Choose from special characters, uppercase and lowercase letters, numbers and soon much more to customize your password! Furthermore, you can easily integrate our API with other tools to make your application even more secure and reliable. So why use easy to guess passwords when you can have strong and secure passwords with PassGenAPI? 💂🏼‍♂️
 
-  Currently, PassGenAPI is at version **1.1.4**.
+<div align="center" alt="contatos">
+  <a href="https://github.com/Nicolas-albu/PassGenAPI/blob/main/LICENSE" target="_blank"><img src="https://img.shields.io/github/license/Nicolas-albu/PassGenAPI?style=for-the-badge" target="_blank"></a>
+  <img src="https://img.shields.io/badge/version-1.1.4-blue?style=for-the-badge" target="_blank">
+</div>
 
   #### :earth_americas: **Language of documents:**
   PassGenAPI documentation is available in English and Portuguese. To choose the desired language, just click on the next language. All code examples, instructions, and controls are available in your chosen language to make the API easier to understand and use.
 
   **USA** [**English**](README-en.md)
 
-  **BRA** [**Portuguese**](README.md)
+  **BRA** [**Português**](README.md)
 
-## **What can I use PassGenAPI for?**
+## :page_with_curl: Documentation Summary
+- [:thinking: **What can I use PassGenAPI for?**](#thinking-what-can-i-use-passgenapi-for)
+- [:computer: **How ​​to use**](#computer-how-​​to-use)
+- [:man_technologist: **Installation**](#man_technologist-installation)
+- [:pushpin: **About PassGenAPI**](#pushpin-about-passgenapi)
+- [:rotating_light: **License**](#rotating_light-license)
+
+## :thinking: **What can I use PassGenAPI for?**
 
 | **Features** | **Description** |
 | :---: | --- |
@@ -24,7 +34,7 @@
 You can use a PassGenAPI to
 
 <details>
-<summary> <b>generating random passwords</b> </summary>
+<summary> <b>:point_right:generating random passwords</b> </summary>
 
 Send an HTTP POST request to the "**pass-gen-api.vercel.app/password**" endpoint. The API accepts the following parameters:
 
@@ -37,7 +47,7 @@ Send an HTTP POST request to the "**pass-gen-api.vercel.app/password**" endpoint
 <!--[Want to see an example of using these parameters?](#com-requests)-->
 
 <details>
-<summary> <b>Do you want to see an example of using these parameters?</b> </summary>
+<summary> <b>:point_right:Do you want to see an example of using these parameters?</b> </summary>
 
 ```python
 import json
@@ -67,7 +77,7 @@ print(response.json()['password'])
 </details>
 
 <details>
-<summary><b>hash generation</b></summary>
+<summary><b>:point_right:hash generation</b></summary>
 
 Send an HTTP POST request to the "**pass-gen-api.vercel.app/hash**" endpoint. The API accepts the following parameters:
 
@@ -80,7 +90,7 @@ Send an HTTP POST request to the "**pass-gen-api.vercel.app/hash**" endpoint. Th
 
 
 <details>
-<summary> <b>Example requests</b> </summary>
+<summary> <b>:point_right:Example requests</b> </summary>
 
 ### **With requests:**
 
@@ -113,38 +123,6 @@ print(response.json()['password'])
 
 ```
 
-### **With urllib:**
-
-```python
-import urllib.request
-import json
-
-# Set the API endpoint
-endpoint = "https://pass-gen-api.vercel.app/password"
-
-# Define the data that will be sent in JSON format
-password_data = {
-    "password_length": 10,
-    "number_of_passwords": 3,
-    "type_of_characters": ["digits", "lowercase", "symbols"]
-}
-
-# Convert data to JSON format
-json_password_data = json.dumps(password_data).encode("utf8")
-
-# Create a POST request with the data in JSON
-request = urllib.request.Request(url=endpoint, data=json_password_data)
-
-# Send the POST request to the API endpoint
-response = urllib.request.urlopen(request)
-
-# Read the API response and decode it from JSON format
-response_data = json.loads(response.read().decode('utf8'))
-
-# Display the API response
-print(response_data.json()['password'])
-
-```
 </details>
 
 ## :man_technologist: **Installation**
@@ -188,8 +166,10 @@ Furthermore, PassGenAPI has been tested with **Pytest** to ensure code and appli
 
 Additionally, we are always working on new implementations to provide even more customizable options for password generation. So, keep an eye out for future updates to PassGenAPI to gain access to new features and make your application even more secure and reliable! :lock:
 
-Currently, PassGenAPI is at version **1.1.4**.
+<img src="https://img.shields.io/badge/version-1.1.4-blue?style=for-the-badge" target="_blank">
 
 ## :rotating_light: **License**
 
 PassGenAPI is under the **Apache-2.0 license**, which means you can use, modify and distribute the API source code for personal and commercial purposes. However, you must include the copyright notice with your distribution and ensure that the same license applies to your modifications. The Apache-2.0 license also includes a disclaimer of warranties and a limitation of liability, so make sure you read it carefully before using PassGenAPI in your project.
+
+<a href="https://github.com/Nicolas-albu/PassGenAPI/blob/main/LICENSE" target="_blank"><img src="https://img.shields.io/github/license/Nicolas-albu/PassGenAPI?style=for-the-badge" target="_blank"></a>
