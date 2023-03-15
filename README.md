@@ -18,6 +18,19 @@
 
   **BRA** [**Português**](README.md)
 
+##
+
+## Sumário da Documentação
+- [**Para o que posso utilizar a PassGenAPI?**](#para-o-que-posso-utilizar-a-passgenapi)
+- [:computer: **Como usar**](#computer-como-usar)
+    - :point_right:geração de senhas aleatórias
+        - :point_right:Quer ver um exemplo da utilização destes parâmetros?
+    - :point_right:geração de hashes
+    - :point_right:Exemplo de requisições
+- [:man_technologist: **Instalação**](#man_technologist-instalação)
+- [:pushpin: **Sobre a PassGenAPI**](#pushpin-sobre-a-passgenapi)
+- [:rotating_light: **Licença**](#rotating_light-licença)
+
 ## **Para o que posso utilizar a PassGenAPI?**
 
 | **Funcionalidades** | **Descrição** |
