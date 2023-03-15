@@ -21,7 +21,7 @@
 ##
 
 ## Sumário da Documentação
-- [**Para o que posso utilizar a PassGenAPI?**](#para-o-que-posso-utilizar-a-passgenapi)
+- [:thinking: **Para o que posso utilizar a PassGenAPI?**](#para-o-que-posso-utilizar-a-passgenapi)
 - [:computer: **Como usar**](#computer-como-usar)
     - :point_right:geração de senhas aleatórias
         - :point_right:Quer ver um exemplo da utilização destes parâmetros?
@@ -31,7 +31,9 @@
 - [:pushpin: **Sobre a PassGenAPI**](#pushpin-sobre-a-passgenapi)
 - [:rotating_light: **Licença**](#rotating_light-licença)
 
-## **Para o que posso utilizar a PassGenAPI?**
+##
+
+## :thinking: **Para o que posso utilizar a PassGenAPI?**
 
 | **Funcionalidades** | **Descrição** |
 | :---: | --- |
