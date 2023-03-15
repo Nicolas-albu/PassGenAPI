@@ -3,7 +3,10 @@
 # :globe_with_meridians: **PassGenAPI**
   The :globe_with_meridians:**PassGenAPI** is a fun and useful tool to generate strong:lock::muscle: and secure passwords for you and your users!:man_technologist: With our API, you can easily create **random passwords* * with various lengths and levels of complexity and **hashes**. Choose from special characters, uppercase and lowercase letters, numbers and soon much more to customize your password! Furthermore, you can easily integrate our API with other tools to make your application even more secure and reliable. So why use easy to guess passwords when you can have strong and secure passwords with PassGenAPI? 💂🏼‍♂️
 
-  Currently, PassGenAPI is at version **1.1.4**.
+<div align="center" alt="contatos">
+  <a href="https://github.com/Nicolas-albu/PassGenAPI/blob/main/LICENSE" target="_blank"><img src="https://img.shields.io/github/license/Nicolas-albu/PassGenAPI?style=for-the-badge" target="_blank"></a>
+  <img src="https://img.shields.io/badge/version-1.1.4-blue?style=for-the-badge" target="_blank">
+</div>
 
   #### :earth_americas: **Language of documents:**
   PassGenAPI documentation is available in English and Portuguese. To choose the desired language, just click on the next language. All code examples, instructions, and controls are available in your chosen language to make the API easier to understand and use.
@@ -163,8 +166,10 @@ Furthermore, PassGenAPI has been tested with **Pytest** to ensure code and appli
 
 Additionally, we are always working on new implementations to provide even more customizable options for password generation. So, keep an eye out for future updates to PassGenAPI to gain access to new features and make your application even more secure and reliable! :lock:
 
-Currently, PassGenAPI is at version **1.1.4**.
+<img src="https://img.shields.io/badge/version-1.1.4-blue?style=for-the-badge" target="_blank">
 
 ## :rotating_light: **License**
 
 PassGenAPI is under the **Apache-2.0 license**, which means you can use, modify and distribute the API source code for personal and commercial purposes. However, you must include the copyright notice with your distribution and ensure that the same license applies to your modifications. The Apache-2.0 license also includes a disclaimer of warranties and a limitation of liability, so make sure you read it carefully before using PassGenAPI in your project.
+
+<a href="https://github.com/Nicolas-albu/PassGenAPI/blob/main/LICENSE" target="_blank"><img src="https://img.shields.io/github/license/Nicolas-albu/PassGenAPI?style=for-the-badge" target="_blank"></a>

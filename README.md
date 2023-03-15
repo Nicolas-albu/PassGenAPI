@@ -169,10 +169,10 @@ Além disso, a PassGenAPI foi testada com **Pytest** para garantir a qualidade d
 
 Além disso, estamos sempre trabalhando em novas implementações para oferecer ainda mais opções personalizáveis para a geração de senhas. Então, fique de olho nas atualizações futuras da PassGenAPI para ter acesso a novas funcionalidades e tornar a sua aplicação ainda mais segura e confiável! :lock:
 
-Atualmente, a PassGenAPI está na versão **1.1.4**.
+<img src="https://img.shields.io/badge/version-1.1.4-blue?style=for-the-badge" target="_blank">
 
 ## :rotating_light: **Licença**
 
 A PassGenAPI está sob a licença **Apache-2.0 license**, o que significa que você pode usar, modificar e distribuir o código-fonte da API para fins pessoais e comerciais. No entanto, você deve incluir a nota de direito autoral na sua distribuição e garantir que a mesma licença seja aplicada às suas modificações. A licença Apache-2.0 também inclui uma renúncia de garantias e uma limitação de responsabilidade, portanto, certifique-se de lê-la cuidadosamente antes de usar a PassGenAPI em seu projeto.
 
-<img src="https://img.shields.io/badge/version-1.1.4-blue?style=for-the-badge" target="_blank">
+<a href="https://github.com/Nicolas-albu/PassGenAPI/blob/main/LICENSE" target="_blank"><img src="https://img.shields.io/github/license/Nicolas-albu/PassGenAPI?style=for-the-badge" target="_blank"></a>
