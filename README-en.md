@@ -15,7 +15,7 @@
 
 ##
 
-## Sumário da Documentação
+## :page_with_curl: Documentation Summary
 - [:thinking: **What can I use PassGenAPI for?**](#thinking-what-can-i-use-passgenapi-for)
 - [:computer: **How ​​to use**](#computer-how-​​to-use)
 - [:man_technologist: **Installation**](#man_technologist-installation)
