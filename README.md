@@ -30,7 +30,7 @@
 Você pode usar a PassGenAPI para 
 
 <details>
-<summary> <b>geração de senhas aleatórias</b> </summary>
+<summary> <b>:point_right:geração de senhas aleatórias</b> </summary>
 
 Enviar uma solicitação HTTP POST para o endpoint "**pass-gen-api.vercel.app/password**". A API aceita os seguintes parâmetros:
 
@@ -43,7 +43,7 @@ Enviar uma solicitação HTTP POST para o endpoint "**pass-gen-api.vercel.app/pa
 <!--[Quer ver um exemplo da utilização destes parâmetros?](#com-requests)-->
 
 <details>
-<summary> <b>Quer ver um exemplo da utilização destes parâmetros?</b> </summary>
+<summary> <b>:point_right:Quer ver um exemplo da utilização destes parâmetros?</b> </summary>
 
 ```python
 import json
@@ -73,7 +73,7 @@ print(response.json()['password'])
 </details>
 
 <details>
-<summary><b>geração de hashes</b></summary>
+<summary><b>:point_right:geração de hashes</b></summary>
 
 Enviar uma solicitação HTTP POST para o endpoint "**pass-gen-api.vercel.app/hash**". A API aceita os seguintes parâmetros:
 
@@ -86,7 +86,7 @@ Enviar uma solicitação HTTP POST para o endpoint "**pass-gen-api.vercel.app/ha
 
 
 <details>
-<summary> <b>Exemplo de requisições</b> </summary>
+<summary> <b>:point_right:Exemplo de requisições</b> </summary>
 
 ### **Com requests:**
 
@@ -116,39 +116,6 @@ response = requests.post(url=endpoint, data=json_password_data)
 
 # Exibe a resposta da API
 print(response.json()['password'])
-
-```
-
-### **Com urllib:**
-
-```python
-import urllib.request
-import json
-
-# Define o endpoint da API
-endpoint = "https://pass-gen-api.vercel.app/password"
-
-# Define os dados que serão enviados no formato JSON
-password_data = {
-    "password_length": 10,
-    "number_of_passwords": 3,
-    "type_of_characters": ["digits", "lowercase", "symbols"]
-}
-
-# Converte os dados para o formato JSON
-json_password_data = json.dumps(password_data).encode("utf8")
-
-# Cria uma solicitação POST com os dados em JSON
-request = urllib.request.Request(url=endpoint, data=json_password_data)
-
-# Envia a solicitação POST para o endpoint da API
-response = urllib.request.urlopen(request)
-
-# Lê a resposta da API e a decodifica do formato JSON
-response_data = json.loads(response.read().decode('utf8'))
-
-# Exibe a resposta da API
-print(response_data.json()['password'])
 
 ```
 </details>

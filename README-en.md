@@ -24,7 +24,7 @@
 You can use a PassGenAPI to
 
 <details>
-<summary> <b>generating random passwords</b> </summary>
+<summary> <b>:point_right:generating random passwords</b> </summary>
 
 Send an HTTP POST request to the "**pass-gen-api.vercel.app/password**" endpoint. The API accepts the following parameters:
 
@@ -37,7 +37,7 @@ Send an HTTP POST request to the "**pass-gen-api.vercel.app/password**" endpoint
 <!--[Want to see an example of using these parameters?](#com-requests)-->
 
 <details>
-<summary> <b>Do you want to see an example of using these parameters?</b> </summary>
+<summary> <b>:point_right:Do you want to see an example of using these parameters?</b> </summary>
 
 ```python
 import json
@@ -67,7 +67,7 @@ print(response.json()['password'])
 </details>
 
 <details>
-<summary><b>hash generation</b></summary>
+<summary><b>:point_right:hash generation</b></summary>
 
 Send an HTTP POST request to the "**pass-gen-api.vercel.app/hash**" endpoint. The API accepts the following parameters:
 
@@ -80,7 +80,7 @@ Send an HTTP POST request to the "**pass-gen-api.vercel.app/hash**" endpoint. Th
 
 
 <details>
-<summary> <b>Example requests</b> </summary>
+<summary> <b>:point_right:Example requests</b> </summary>
 
 ### **With requests:**
 
@@ -113,38 +113,6 @@ print(response.json()['password'])
 
 ```
 
-### **With urllib:**
-
-```python
-import urllib.request
-import json
-
-# Set the API endpoint
-endpoint = "https://pass-gen-api.vercel.app/password"
-
-# Define the data that will be sent in JSON format
-password_data = {
-    "password_length": 10,
-    "number_of_passwords": 3,
-    "type_of_characters": ["digits", "lowercase", "symbols"]
-}
-
-# Convert data to JSON format
-json_password_data = json.dumps(password_data).encode("utf8")
-
-# Create a POST request with the data in JSON
-request = urllib.request.Request(url=endpoint, data=json_password_data)
-
-# Send the POST request to the API endpoint
-response = urllib.request.urlopen(request)
-
-# Read the API response and decode it from JSON format
-response_data = json.loads(response.read().decode('utf8'))
-
-# Display the API response
-print(response_data.json()['password'])
-
-```
 </details>
 
 ## :man_technologist: **Installation**
