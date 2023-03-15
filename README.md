@@ -1,5 +1,5 @@
 
-<img src="docs\PassGenAPI-GIF.gif" alt="OpenGenAPI">
+<img src="docs\PassGenAPI-GIF.gif" alt="PassGenAPI">
 
 # :globe_with_meridians: **PassGenAPI** 
   A :globe_with_meridians:**PassGenAPI** é uma ferramenta divertida e útil para gerar senhas fortes:lock::muscle: e seguras para você e seus usuários!:man_technologist: Com a nossa API, você pode facilmente criar **senhas aleatórias** com vários comprimentos e níveis de complexidade e **hashes**. Escolha entre caracteres especiais, letras maiúsculas e minúsculas, números e em breve muito mais para personalizar a sua senha! Além disso, você pode integrar facilmente a nossa API com outras ferramentas para tornar a sua aplicação ainda mais segura e confiável. Então, por que usar senhas fáceis de adivinhar quando você pode ter senhas fortes e seguras com a PassGenAPI? 💂🏼‍♂️
