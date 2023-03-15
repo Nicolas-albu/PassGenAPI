@@ -18,10 +18,6 @@
 ## Sumário da Documentação
 - [:thinking: **What can I use PassGenAPI for?**](#thinking-what-can-i-use-passgenapi-for)
 - [:computer: **How ​​to use**](#computer-how-​​to-use)
-    - :point_right:generating random passwords
-        - :point_right:Do you want to see an example of using these parameters?
-    - :point_right:hash generation
-    - :point_right:Example requests
 - [:man_technologist: **Installation**](#man_technologist-installation)
 - [:pushpin: **About PassGenAPI**](#pushpin-about-passgenapi)
 - [:rotating_light: **License**](#rotating_light-license)
