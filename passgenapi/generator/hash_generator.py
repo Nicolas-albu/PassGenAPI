@@ -26,10 +26,10 @@ class HashGenerator:
             "sha224": sha224,
             "sha256": sha256,
             "sha384": sha384,
-            "sha3-256": sha3_256
+            "sha3-256": sha3_256,
         }
         __encrypted_data: str = __hashes_generation_cases.get(self.__hash_type, None)
-        
+
         return __encrypted_data(self.__data_to_encrypt).hexdigest()
 
     def __str__(self) -> str:
