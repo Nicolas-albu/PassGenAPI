@@ -1,5 +1,6 @@
 
-from api.generator.hash_generator import HashGenerator
+from passgenapi.generator.hash_generator import HashGenerator
+
 
 def test_md5():
     generated_hash = HashGenerator("TEST", "md5").generate_hash()

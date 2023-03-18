@@ -6,7 +6,7 @@ import requests
 
 # Teste da versão 1.0.0
 #endpoint = "https://pass-gen-api-nicolas-albu.vercel.app/password"
-endpoint = "https://pass-gen-api.vercel.app/password_definitions"
+endpoint = "https://pass-gen-api.vercel.app/password"
 
 def get_response(password_data: dict[str, Union[int, str, list[str]]]):
     # Converte os dados para o formato JSON
