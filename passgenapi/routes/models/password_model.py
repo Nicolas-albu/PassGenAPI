@@ -1,10 +1,12 @@
+"""This module contains the parameter template for the password generation POST route."""
+
 from typing import Union
 
 from pydantic import BaseModel
 
 
 class PasswordModel(BaseModel):
-    """JSON parameter model class to generate password
+    """JSON parameter model class to generate password.
 
     Args:
         * BaseModel (pydantic.BaseModel): Password template for the parameters of a JSON request from endpoint /password_definitions/

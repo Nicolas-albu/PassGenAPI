@@ -1,0 +1,1 @@
+"""This subpackage contains all template route parameters for generating passwords and hashes."""

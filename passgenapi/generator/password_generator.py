@@ -1,10 +1,12 @@
+"""This module contains the PasswordGenerator class for generating passwords."""
+
 import secrets
 from string import ascii_lowercase, ascii_uppercase, digits, punctuation
 from typing import Union
 
 
 class PasswordGenerator:
-    """Class for generating passwords"""
+    """Class for generating passwords."""
 
     def __init__(
         self,
@@ -12,7 +14,7 @@ class PasswordGenerator:
         number_of_passwords: int,
         types_of_characters: Union[list[str], str],
     ):
-        """parameterize password
+        """Parameterize password.
 
         Args:
             * password_length (int): Length of the password
@@ -50,7 +52,7 @@ class PasswordGenerator:
         self.__character_final = "".join(filter(None, parameter_character_sets))
 
     def __verify_has_digits_lower_upper(self, password: str) -> bool:
-        """method private to check if password has digits, characters lower and upper
+        """Check if password has digits, characters lower and upper.
 
         Args:
             password (str): password to be checked
@@ -64,7 +66,7 @@ class PasswordGenerator:
         return __has_digit and __has_lower and __has_upper
 
     def __verify_has_symbols(self, password: str) -> bool:
-        """private method to check if password has symbols
+        """Check if password has symbols.
 
         Args:
             password (str): password to be checked
@@ -76,8 +78,7 @@ class PasswordGenerator:
         return __has_symbols
 
     def generate_password(self) -> Union[list[str], str]:
-        """call this method to generate a random password with parameters defined in the
-           PasswordGenerator instantiation
+        """Call this method to generate a random password with parameters defined in the PasswordGenerator instantiation.
 
         Returns:
             str: password generated
@@ -101,7 +102,7 @@ class PasswordGenerator:
         )
 
     def generate_defined_password(self) -> str:
-        """method to generate passwords with definitions of characters of method generate_password()
+        """Generate passwords with definitions of characters of method generate_password().
 
         Returns:
             str: password generated
@@ -112,7 +113,7 @@ class PasswordGenerator:
         )
 
     def generate_full_character_password(self) -> str:
-        """method to generate password with all characters
+        """Generate password with all characters.
 
         Returns:
             str: passwords generated with all characters
@@ -136,4 +137,9 @@ class PasswordGenerator:
         return __password_with_all_characters
 
     def __str__(self):
+        """Return a password generated with passed parameters.
+
+        Returns:
+            _type_: generated password
+        """
         return self.generate_password()

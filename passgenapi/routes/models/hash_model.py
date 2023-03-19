@@ -1,8 +1,10 @@
+"""This module contains the parameter template for the hash generation POST route."""
+
 from pydantic import BaseModel
 
 
 class HashModel(BaseModel):
-    """JSON parameter model class to generate hash
+    """JSON parameter model class to generate hash.
 
     Args:
         * BaseModel (pydantic.BaseModel): Hash template for the parameters of a JSON request from endpoint /hash/

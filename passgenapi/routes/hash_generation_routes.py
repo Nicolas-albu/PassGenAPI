@@ -1,14 +1,16 @@
+"""This module contains routes for generating hashes by the HashGenerator class."""
+
 from fastapi import APIRouter
 
-from passgenapi.routes.models.hash_model import HashModel
 from passgenapi.generator.hash_generator import HashGenerator
+from passgenapi.routes.models.hash_model import HashModel
 
 hash_routes = APIRouter()
 
 
 @hash_routes.post("/hash/")
 async def post_hash_generator(hash_definitions: HashModel) -> dict:
-    """Router POST method to create a new hash with the passed parameters
+    """Router POST method to create a new hash with the passed parameters.
 
     Args:
         hash_definitions (Hash): parameters for the new hash

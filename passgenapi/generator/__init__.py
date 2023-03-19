@@ -1,0 +1,1 @@
+"""This subpackage includes all settings for generating passwords and hashes."""

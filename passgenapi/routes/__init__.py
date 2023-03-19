@@ -1,0 +1,1 @@
+"""This subpackage includes all routes for generating passwords and hashes."""
