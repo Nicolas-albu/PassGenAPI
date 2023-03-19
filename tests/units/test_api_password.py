@@ -4,16 +4,14 @@ from typing import Union
 
 import requests
 
-# Teste da versão 1.0.0
-# endpoint = "https://pass-gen-api-nicolas-albu.vercel.app/password"
 endpoint = "https://pass-gen-api.vercel.app/password"
 
 
 def get_response(password_data: dict[str, Union[int, str, list[str]]]):
-    # Converte os dados para o formato JSON
+    # Convert data to JSON format
     json_password_data = json.dumps(password_data)
 
-    # Envia a requisição POST para o endpoint da API com os dados em JSON
+    # Send POST request to API endpoint with data in JSON
     response = requests.post(url=endpoint, data=json_password_data)
 
     return response.json()["password"]
