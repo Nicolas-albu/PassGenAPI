@@ -4,7 +4,7 @@ from typing import Union
 
 import requests
 
-endpoint = "https://pass-gen-api.vercel.app/password"
+endpoint = "http://localhost:8000/password"
 
 
 def get_response(password_data: dict[str, Union[int, str, list[str]]]):
@@ -22,7 +22,7 @@ def get_assert(password):
     digits = any(position.isdigit() for position in password)
     lowers = any(position.islower() for position in password)
     uppers = any(position.isupper() for position in password)
-    return symbols, digits, lowers, uppers
+    return (symbols, digits, lowers, uppers)
 
 
 def test_full_character_password():
