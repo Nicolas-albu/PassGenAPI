@@ -1,4 +1,4 @@
-<img src="docs\PassGenAPI-GIF.gif" alt="OpenGenAPI">
+<img src="docs\PassGenAPI-GIF.gif" alt="PassGenAPI">
 
 # :globe_with_meridians: **PassGenAPI**
   The :globe_with_meridians:**PassGenAPI** is a fun and useful tool to generate strong:lock::muscle: and secure passwords for you and your users!:man_technologist: With our API, you can easily create **random passwords* * with various lengths and levels of complexity and **hashes**. Choose from special characters, uppercase and lowercase letters, numbers and soon much more to customize your password! Furthermore, you can easily integrate our API with other tools to make your application even more secure and reliable. So why use easy to guess passwords when you can have strong and secure passwords with PassGenAPI? 💂🏼‍♂️
