@@ -2,7 +2,7 @@
 
 from fastapi import APIRouter
 
-from ..generator import HashGenerator
+from ..generators import HashGenerator
 from .models import HashModel
 
 hash_routes = APIRouter()

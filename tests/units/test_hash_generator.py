@@ -1,4 +1,4 @@
-from passgenapi.generator.hash_generator import HashGenerator
+from passgenapi.generators.hash_generator import HashGenerator
 
 
 def test_md5():

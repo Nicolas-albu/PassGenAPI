@@ -2,7 +2,7 @@
 
 from fastapi import APIRouter
 
-from ..generator import PasswordGenerator
+from ..generators import PasswordGenerator
 from .models import PasswordModel
 
 password_routes = APIRouter()
