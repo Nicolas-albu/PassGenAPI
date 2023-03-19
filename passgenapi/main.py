@@ -2,9 +2,7 @@
 
 from fastapi import FastAPI
 
-from passgenapi.routes.hash_generation_routes import hash_routes
-from passgenapi.routes.main_routes import main_routes
-from passgenapi.routes.password_generation_routes import password_routes
+from .routes import hash_routes, main_routes, password_routes
 
 app = FastAPI()
 

@@ -2,8 +2,8 @@
 
 from fastapi import APIRouter
 
-from passgenapi.generator.hash_generator import HashGenerator
-from passgenapi.routes.models.hash_model import HashModel
+from ..generator import HashGenerator
+from .models import HashModel
 
 hash_routes = APIRouter()
 
