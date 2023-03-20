@@ -1,4 +1,4 @@
-"""This module includes initialization and main configuration of PassaGenAPI."""
+"""This module includes initialization and main configuration of API."""
 
 from fastapi import FastAPI
 
