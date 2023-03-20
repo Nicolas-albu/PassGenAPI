@@ -24,9 +24,9 @@ class PasswordModel(BaseModel):
     ]
 
     @validator("types_of_characters")
-    def not_none_in_tyoes_of_characters(cls, character):
+    def not_none_in_types_of_characters(cls, character):
         return (
             ["digits", "lowercase", "symbols", "uppercase"]
-            if character is (None or "")
+            if character in (None, '')
             else character
         )
