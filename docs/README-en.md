@@ -166,7 +166,7 @@ Furthermore, PassGenAPI has been tested with **Pytest** to ensure code and appli
 
 Additionally, we are always working on new implementations to provide even more customizable options for password generation. So, keep an eye out for future updates to PassGenAPI to gain access to new features and make your application even more secure and reliable! :lock:
 
-<img src="https://img.shields.io/badge/version-1.1.4-blue?style=for-the-badge" target="_blank">
+<img src="https://img.shields.io/badge/version-1.1.10-blue?style=for-the-badge" target="_blank">
 
 ## :rotating_light: **License**
 

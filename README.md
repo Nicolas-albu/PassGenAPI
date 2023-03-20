@@ -169,7 +169,7 @@ Além disso, a PassGenAPI foi testada com **Pytest** para garantir a qualidade d
 
 Além disso, estamos sempre trabalhando em novas implementações para oferecer ainda mais opções personalizáveis para a geração de senhas. Então, fique de olho nas atualizações futuras da PassGenAPI para ter acesso a novas funcionalidades e tornar a sua aplicação ainda mais segura e confiável! :lock:
 
-<img src="https://img.shields.io/badge/version-1.1.4-blue?style=for-the-badge" target="_blank">
+<img src="https://img.shields.io/badge/version-1.1.10-blue?style=for-the-badge" target="_blank">
 
 ## :rotating_light: **Licença**
 
