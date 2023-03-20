@@ -12,7 +12,7 @@ class PasswordGenerator:
         self,
         password_length: int,
         number_of_passwords: int,
-        types_of_characters: Union[list[str], str],
+        types_of_characters: tuple[str],
     ):
         """Parameterize password.
 
@@ -24,13 +24,8 @@ class PasswordGenerator:
 
         self.__password_length: int = password_length
         self.__number_of_passwords: int = number_of_passwords
-        self.__types_of_characters: tuple[str] = tuple(
-            sorted(
-                types_of_characters
-                if isinstance(types_of_characters, list)
-                else [types_of_characters]
-            )
-        )
+        self.__types_of_characters: tuple[str] = types_of_characters
+        # breakpoint()
         self.__character_sets: dict[str, str] = {
             "uppercase": ascii_uppercase,
             "lowercase": ascii_lowercase,

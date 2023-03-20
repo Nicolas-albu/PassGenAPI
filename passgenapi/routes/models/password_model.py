@@ -16,17 +16,22 @@ class PasswordModel(BaseModel):
 
     password_length: int = 12
     number_of_passwords: int = 1
-    types_of_characters: Union[list[str], str, None] = [
-        "digits",
-        "lowercase",
-        "symbols",
-        "uppercase",
-    ]
+    types_of_characters: Union[list[str], str] = None
 
     @validator("types_of_characters")
     def not_none_in_types_of_characters(cls, character):
         return (
             ["digits", "lowercase", "symbols", "uppercase"]
-            if character in (None, '')
+            if character in (None, "")
             else character
+        )
+
+    @validator("types_of_characters")
+    def convert_type_of_characters(cls, list_of_characters):
+        return tuple(
+            sorted(
+                list_of_characters
+                if isinstance(list_of_characters, list)
+                else [list_of_characters]
+            )
         )
