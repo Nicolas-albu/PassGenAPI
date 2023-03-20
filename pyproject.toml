@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "passgenapi"
-version = "1.1.4"
+version = "1.1.10"
 description = "API to generate passwords and hashes"
 authors = ["Nícolas Albuquerque Ramos <nicolasalbuquerque581@gmail.com>"]
 license = "Apache 2.0 License"

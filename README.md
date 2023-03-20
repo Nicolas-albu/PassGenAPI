@@ -6,7 +6,7 @@
 
 <div align="center" alt="contatos">
   <a href="https://github.com/Nicolas-albu/PassGenAPI/blob/main/LICENSE" target="_blank"><img src="https://img.shields.io/github/license/Nicolas-albu/PassGenAPI?style=for-the-badge" target="_blank"></a>
-  <img src="https://img.shields.io/badge/version-1.1.4-blue?style=for-the-badge" target="_blank">
+  <img src="https://img.shields.io/badge/version-1.1.10-blue?style=for-the-badge" target="_blank">
 </div>
 
 ##
