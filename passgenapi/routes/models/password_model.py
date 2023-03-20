@@ -2,7 +2,7 @@
 
 from typing import Union
 
-from pydantic import BaseModel
+from pydantic import BaseModel, validator
 
 
 class PasswordModel(BaseModel):
@@ -22,3 +22,11 @@ class PasswordModel(BaseModel):
         "symbols",
         "uppercase",
     ]
+
+    @validator("types_of_characters")
+    def not_none_in_tyoes_of_characters(cls, character):
+        return (
+            ["digits", "lowercase", "symbols", "uppercase"]
+            if character is (None or "")
+            else character
+        )

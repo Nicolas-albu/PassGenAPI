@@ -21,16 +21,7 @@ class PasswordGenerator:
             * types_of_characters (list[str]): Character types of characters,
               default equals ["digits", "lowercase", "symbols", "uppercase"]
         """
-        # Parameter validation
-        if types_of_characters is None:
-            types_of_characters = [
-                "digits",
-                "lowercase",
-                "symbols",
-                "uppercase",
-            ]
 
-        # attribute definition
         self.__password_length: int = password_length
         self.__number_of_passwords: int = number_of_passwords
         self.__types_of_characters: tuple[str] = tuple(
