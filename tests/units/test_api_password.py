@@ -46,16 +46,24 @@ def test_generate_full_character_password_list():
     assert len(list_of_passwords) == 4
     assert any(len(password) == 10 for password in list_of_passwords)
     assert any(
-        symbol in punctuation for password in list_of_passwords for symbol in password
+        symbol in punctuation
+        for password in list_of_passwords
+        for symbol in password
     )
     assert any(
-        position.isdigit() for password in list_of_passwords for position in password
+        position.isdigit()
+        for password in list_of_passwords
+        for position in password
     )
     assert any(
-        position.islower() for password in list_of_passwords for position in password
+        position.islower()
+        for password in list_of_passwords
+        for position in password
     )
     assert any(
-        position.isupper() for password in list_of_passwords for position in password
+        position.isupper()
+        for password in list_of_passwords
+        for position in password
     )
 
 

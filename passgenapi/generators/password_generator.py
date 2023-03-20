@@ -23,7 +23,12 @@ class PasswordGenerator:
         """
         # Parameter validation
         if types_of_characters is None:
-            types_of_characters = ["digits", "lowercase", "symbols", "uppercase"]
+            types_of_characters = [
+                "digits",
+                "lowercase",
+                "symbols",
+                "uppercase",
+            ]
 
         # attribute definition
         self.__password_length: int = password_length
@@ -49,7 +54,9 @@ class PasswordGenerator:
             for character_parameter in self.__types_of_characters
         ]
         # concatenate all character sets associated with the braces in __character_final
-        self.__character_final = "".join(filter(None, parameter_character_sets))
+        self.__character_final = "".join(
+            filter(None, parameter_character_sets)
+        )
 
     def __verify_has_digits_lower_upper(self, password: str) -> bool:
         """Check if password has digits, characters lower and upper.
@@ -74,7 +81,9 @@ class PasswordGenerator:
         Returns:
             bool: verified password boolean value
         """
-        __has_symbols: bool = any(position in punctuation for position in password)
+        __has_symbols: bool = any(
+            position in punctuation for position in password
+        )
         return __has_symbols
 
     def generate_password(self) -> Union[list[str], str]:
@@ -127,7 +136,9 @@ class PasswordGenerator:
         if self.__password_length >= 4:
             # as long as the password has no lowercase, uppercase, digits and symbols, generate password
             while not (
-                self.__verify_has_digits_lower_upper(__password_with_all_characters)
+                self.__verify_has_digits_lower_upper(
+                    __password_with_all_characters
+                )
                 and self.__verify_has_symbols(__password_with_all_characters)
             ):
                 __password_with_all_characters = "".join(

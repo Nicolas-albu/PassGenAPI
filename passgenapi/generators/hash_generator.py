@@ -30,7 +30,9 @@ class HashGenerator:
             "sha384": sha384,
             "sha3-256": sha3_256,
         }
-        __encrypted_data: str = __hashes_generation_cases.get(self.__hash_type, None)
+        __encrypted_data: str = __hashes_generation_cases.get(
+            self.__hash_type, None
+        )
 
         return __encrypted_data(self.__data_to_encrypt).hexdigest()
 
