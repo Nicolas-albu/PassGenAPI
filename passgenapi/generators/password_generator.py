@@ -4,6 +4,8 @@ import secrets
 from string import ascii_lowercase, ascii_uppercase, digits, punctuation
 from typing import Union
 
+from pydantic import validate_arguments
+
 
 class PasswordGenerator:
     """Class for generating passwords."""
@@ -25,7 +27,6 @@ class PasswordGenerator:
         self.__password_length: int = password_length
         self.__number_of_passwords: int = number_of_passwords
         self.__types_of_characters: tuple[str] = types_of_characters
-        # breakpoint()
         self.__character_sets: dict[str, str] = {
             "uppercase": ascii_uppercase,
             "lowercase": ascii_lowercase,
