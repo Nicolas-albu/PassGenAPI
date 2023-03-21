@@ -1,6 +1,7 @@
 """This module contains the PasswordGenerator class for generating passwords."""
 
 import secrets
+from functools import cache
 from string import ascii_lowercase, ascii_uppercase, digits, punctuation
 from typing import Union
 
@@ -66,7 +67,7 @@ class PasswordGenerator:
         )
         return __has_symbols
 
-    def generate_password(self) -> Union[list[str], str]:
+    def generate_password(self) -> Union[tuple, str]:
         """Call this method to generate a random password with parameters defined in the PasswordGenerator instantiation.
 
         Returns:
@@ -75,19 +76,14 @@ class PasswordGenerator:
         # method call associated with character types, otherwise returns self.generate_full_character_password
         __password_generated: str = (
             self.generate_defined_password
-            if len(self.__types_of_characters)
-            != 4  # maximum size of character types
+            if len(self.__types_of_characters) != 4  # max size of char types
             else self.generate_full_character_password
         )
-        __list_of_passwords: list[str] = [
+        __passwords: Union[tuple, str] = (
             __password_generated()
             for number in range(self.__number_of_passwords)
-        ]
-        return (
-            __list_of_passwords[0]
-            if len(__list_of_passwords) == 1
-            else __list_of_passwords
         )
+        return __passwords
 
     def generate_defined_password(self) -> str:
         """Generate passwords with definitions of characters of method generate_password().

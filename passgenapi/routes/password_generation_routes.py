@@ -18,10 +18,16 @@ async def post_password_generator(password_definitions: PasswordModel) -> dict:
     Returns:
         dict: the new password generated in JSON format
     """
+
+    password = PasswordGenerator(
+        password_length=password_definitions.password_length,
+        number_of_passwords=password_definitions.number_of_passwords,
+        types_of_characters=password_definitions.types_of_characters,
+    ).generate_password()
+
+    test = isinstance(password, tuple)
+    test1 = isinstance(password, str)
+
     return {
-        "password": PasswordGenerator(
-            password_length=password_definitions.password_length,
-            number_of_passwords=password_definitions.number_of_passwords,
-            types_of_characters=password_definitions.types_of_characters,
-        ).generate_password()
+        "password": password
     }
