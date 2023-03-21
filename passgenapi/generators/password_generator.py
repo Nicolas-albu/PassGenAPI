@@ -75,6 +75,7 @@ class PasswordGenerator:
         Returns:
             str: password generated
         """
+        #breakpoint()
         generation_cases: dict = {
             self.__types_of_characters: self.generate_defined_password,
         }
@@ -85,7 +86,6 @@ class PasswordGenerator:
         __list_of_passwords: list[str] = [
             __password_generated()
             for number in range(self.__number_of_passwords)
-            if self.__number_of_passwords >= 1
         ]
         return (
             __list_of_passwords[0]

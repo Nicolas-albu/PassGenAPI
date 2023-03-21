@@ -2,7 +2,9 @@
 
 from typing import Union
 
-from pydantic import BaseModel, root_validator
+from pydantic import BaseModel, root_validator, validator
+
+from ...errors import PasswordNumberLessThanZeroError
 
 
 class PasswordModel(BaseModel):
@@ -22,6 +24,12 @@ class PasswordModel(BaseModel):
         "symbols",
         "uppercase",
     )
+
+    @validator('number_of_passwords')
+    def cannot_be_less_than_zero(cls, value: int): 
+        if value <= 0:
+            raise PasswordNumberLessThanZeroError()
+        return value
 
     @root_validator
     def convert_types_of_characters_to_tuple(cls, parameters: dict) -> dict:
