@@ -18,7 +18,7 @@ class PasswordGenerator:
 
         Args:
             * password_length (int): Length of the password
-            * types_of_characters (list[str]): Character types of characters,
+            * types_of_characters (list[str] | str): Character types,
               default equals ["digits", "lowercase", "symbols", "uppercase"]
         """
 
@@ -75,13 +75,11 @@ class PasswordGenerator:
         Returns:
             str: password generated
         """
-        #breakpoint()
-        generation_cases: dict = {
-            self.__types_of_characters: self.generate_defined_password,
-        }
-        # method call associated with the key, otherwise returns self.generate_full_character_password
-        __password_generated: str = generation_cases.get(
-            self.__types_of_characters, self.generate_full_character_password
+        # method call associated with character types, otherwise returns self.generate_full_character_password
+        __password_generated: str = (
+            self.generate_defined_password
+            if len(self.__types_of_characters) != 4 # maximum size of character types
+            else self.generate_full_character_password
         )
         __list_of_passwords: list[str] = [
             __password_generated()

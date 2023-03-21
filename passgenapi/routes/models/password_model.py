@@ -25,8 +25,8 @@ class PasswordModel(BaseModel):
         "uppercase",
     )
 
-    @validator('number_of_passwords')
-    def cannot_be_less_than_zero(cls, value: int): 
+    @validator("number_of_passwords")
+    def cannot_be_less_than_zero(cls, value: int):
         if value <= 0:
             raise PasswordNumberLessThanZeroError()
         return value
