@@ -4,8 +4,6 @@ import secrets
 from string import ascii_lowercase, ascii_uppercase, digits, punctuation
 from typing import Union
 
-from pydantic import validate_arguments
-
 
 class PasswordGenerator:
     """Class for generating passwords."""
@@ -41,9 +39,7 @@ class PasswordGenerator:
             for character_parameter in self.__types_of_characters
         ]
         # concatenate all character sets associated with the braces in __character_final
-        self.__character_final = "".join(
-            filter(None, parameter_character_sets)
-        )
+        self.__character_final = "".join(parameter_character_sets)
 
     def __verify_has_digits_lower_upper(self, password: str) -> bool:
         """Check if password has digits, characters lower and upper.
