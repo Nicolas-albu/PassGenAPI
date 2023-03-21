@@ -3,7 +3,6 @@
 import secrets
 from functools import cache
 from string import ascii_lowercase, ascii_uppercase, digits, punctuation
-from typing import Union
 
 
 class PasswordGenerator:
@@ -67,7 +66,7 @@ class PasswordGenerator:
         )
         return __has_symbols
 
-    def generate_password(self) -> Union[tuple, str]:
+    def generate_password(self) -> tuple:
         """Call this method to generate a random password with parameters defined in the PasswordGenerator instantiation.
 
         Returns:
@@ -79,7 +78,7 @@ class PasswordGenerator:
             if len(self.__types_of_characters) != 4  # max size of char types
             else self.generate_full_character_password
         )
-        __passwords: Union[tuple, str] = (
+        __passwords = tuple(
             __password_generated()
             for number in range(self.__number_of_passwords)
         )
