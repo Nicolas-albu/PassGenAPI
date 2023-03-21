@@ -21,7 +21,6 @@ class PasswordGenerator:
             * types_of_characters (list[str] | str): Character types,
               default equals ["digits", "lowercase", "symbols", "uppercase"]
         """
-
         self.__password_length: int = password_length
         self.__number_of_passwords: int = number_of_passwords
         self.__types_of_characters: tuple[str] = types_of_characters
@@ -33,13 +32,11 @@ class PasswordGenerator:
         }
         self.__character_final: str = ""
 
-        # get all groups of characters from the type_of_characters parameter
-        parameter_character_sets: list[Union[str, None]] = [
+        # concatenate all character sets associated with character types
+        self.__character_final = "".join(
             self.__character_sets.get(character_parameter)
             for character_parameter in self.__types_of_characters
-        ]
-        # concatenate all character sets associated with the braces in __character_final
-        self.__character_final = "".join(parameter_character_sets)
+        )
 
     def __verify_has_digits_lower_upper(self, password: str) -> bool:
         """Check if password has digits, characters lower and upper.
@@ -78,7 +75,8 @@ class PasswordGenerator:
         # method call associated with character types, otherwise returns self.generate_full_character_password
         __password_generated: str = (
             self.generate_defined_password
-            if len(self.__types_of_characters) != 4 # maximum size of character types
+            if len(self.__types_of_characters)
+            != 4  # maximum size of character types
             else self.generate_full_character_password
         )
         __list_of_passwords: list[str] = [
