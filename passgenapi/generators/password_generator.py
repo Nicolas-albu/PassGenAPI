@@ -1,7 +1,6 @@
 """This module contains the PasswordGenerator class for generating passwords."""
 
 import secrets
-from functools import cache
 from string import ascii_lowercase, ascii_uppercase, digits, punctuation
 
 
@@ -25,10 +24,10 @@ class PasswordGenerator:
         self.__number_of_passwords: int = number_of_passwords
         self.__types_of_characters: tuple[str] = types_of_characters
         self.__character_sets: dict[str, str] = {
-            "uppercase": ascii_uppercase,
+            "digits": digits,
             "lowercase": ascii_lowercase,
             "symbols": punctuation,
-            "digits": digits,
+            "uppercase": ascii_uppercase,
         }
         self.__character_final: str = ""
 
