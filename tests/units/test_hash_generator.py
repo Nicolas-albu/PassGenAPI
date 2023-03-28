@@ -4,10 +4,6 @@ import pytest
 
 from passgenapi.generators.hash_generator import HashGenerator
 
-"""@pytest.fixture
-def hash_generator():
-    return HashGenerator("test data", "md5")"""
-
 
 def test_hashgenerator_initialization():
     # Testa se a instância é criada corretamente

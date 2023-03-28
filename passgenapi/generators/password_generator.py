@@ -37,34 +37,6 @@ class PasswordGenerator:
             for character_parameter in self.__types_of_characters
         )
 
-    def __verify_has_digits_lower_upper(self, password: str) -> bool:
-        """Check if password has digits, characters lower and upper.
-
-        Args:
-            password (str): password to be checked
-
-        Returns:
-            bool: verified password boolean value
-        """
-        __has_digit: bool = any(position.isdigit() for position in password)
-        __has_lower: bool = any(position.islower() for position in password)
-        __has_upper: bool = any(position.isupper() for position in password)
-        return __has_digit and __has_lower and __has_upper
-
-    def __verify_has_symbols(self, password: str) -> bool:
-        """Check if password has symbols.
-
-        Args:
-            password (str): password to be checked
-
-        Returns:
-            bool: verified password boolean value
-        """
-        __has_symbols: bool = any(
-            position in punctuation for position in password
-        )
-        return __has_symbols
-
     def generate_password(self) -> tuple:
         """Call this method to generate a random password with parameters defined in the PasswordGenerator instantiation.
 
@@ -100,6 +72,41 @@ class PasswordGenerator:
         Returns:
             str: passwords generated with all characters
         """
+
+        def verify_has_digits_lower_upper(password: str) -> bool:
+            """Check if password has digits, characters lower and upper.
+
+            Args:
+                password (str): password to be checked
+
+            Returns:
+                bool: verified password boolean value
+            """
+            __has_digit: bool = any(
+                position.isdigit() for position in password
+            )
+            __has_lower: bool = any(
+                position.islower() for position in password
+            )
+            __has_upper: bool = any(
+                position.isupper() for position in password
+            )
+            return __has_digit and __has_lower and __has_upper
+
+        def verify_has_symbols(password: str) -> bool:
+            """Check if password has symbols.
+
+            Args:
+                password (str): password to be checked
+
+            Returns:
+                bool: verified password boolean value
+            """
+            __has_symbols: bool = any(
+                position in punctuation for position in password
+            )
+            return __has_symbols
+
         __password_with_all_characters: str = "".join(
             secrets.choice(self.__character_final)
             for password_position in range(self.__password_length)
@@ -109,10 +116,8 @@ class PasswordGenerator:
         if self.__password_length >= 4:
             # as long as the password has no lowercase, uppercase, digits and symbols, generate password
             while not (
-                self.__verify_has_digits_lower_upper(
-                    __password_with_all_characters
-                )
-                and self.__verify_has_symbols(__password_with_all_characters)
+                verify_has_digits_lower_upper(__password_with_all_characters)
+                and verify_has_symbols(__password_with_all_characters)
             ):
                 __password_with_all_characters = "".join(
                     secrets.choice(self.__character_final)
