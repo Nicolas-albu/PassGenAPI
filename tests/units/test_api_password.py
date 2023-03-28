@@ -32,7 +32,7 @@ def test_full_character_password():
         "types_of_characters": ["digits", "lowercase", "symbols", "uppercase"],
     }
     assert (password := get_response(password_data)) is not None
-    assert len(password) == 10
+    assert len(password[0]) == 10
     assert get_assert(password)
 
 
@@ -74,7 +74,7 @@ def test_second_generate_full_character_password():
         "types_of_characters": ["symbols", "lowercase", "digits", "uppercase"],
     }
     assert (password := get_response(password_data)) is not None
-    assert len(password) == 23
+    assert len(password[0]) == 23
     assert get_assert(password)
 
 
@@ -85,7 +85,7 @@ def test_third_generate_full_character_password():
         "types_of_characters": ["digits", "lowercase", "symbols", "uppercase"],
     }
     assert (password := get_response(password_data)) is not None
-    assert len(password) == 15
+    assert len(password[0]) == 15
     assert get_assert(password)
 
 
@@ -96,7 +96,7 @@ def test_fourth_generate_full_character_password():
         "types_of_characters": ["uppercase", "lowercase", "digits", "symbols"],
     }
     assert (password := get_response(password_data)) is not None
-    assert len(password) == 34
+    assert len(password[0]) == 34
     assert get_assert(password)
 
 
@@ -107,7 +107,7 @@ def test_generate_password_with_symbols():
         "types_of_characters": ["uppercase", "lowercase", "digits", "symbols"],
     }
     assert (password := get_response(password_data)) is not None
-    assert len(password) == 20
+    assert len(password[0]) == 20
     assert get_assert(password)
 
 
@@ -118,11 +118,11 @@ def test_generate_password_with_digits():
         "types_of_characters": "digits",
     }
     assert (password := get_response(password_data)) is not None
-    assert len(password) == 5
-    assert password.isdigit()
-    assert not any(symbol in punctuation for symbol in password)
-    assert not any(position.islower() for position in password)
-    assert not any(position.isupper() for position in password)
+    assert len(password[0]) == 5
+    assert password[0].isdigit()
+    assert not any(symbol in punctuation for symbol in password[0])
+    assert not any(position.islower() for position in password[0])
+    assert not any(position.isupper() for position in password[0])
 
 
 def test_generate_password_with_uppercase():
@@ -132,11 +132,11 @@ def test_generate_password_with_uppercase():
         "types_of_characters": "uppercase",
     }
     assert (password := get_response(password_data)) is not None
-    assert len(password) == 7
-    assert password.isupper()
-    assert not any(symbol in punctuation for symbol in password)
-    assert not any(position.isdigit() for position in password)
-    assert not any(position.islower() for position in password)
+    assert len(password[0]) == 7
+    assert password[0].isupper()
+    assert not any(symbol in punctuation for symbol in password[0])
+    assert not any(position.isdigit() for position in password[0])
+    assert not any(position.islower() for position in password[0])
 
 
 def test_generate_password_with_lowercase():
@@ -146,11 +146,11 @@ def test_generate_password_with_lowercase():
         "types_of_characters": "lowercase",
     }
     assert (password := get_response(password_data)) is not None
-    assert len(password) == 8
-    assert password.islower()
-    assert not any(symbol in punctuation for symbol in password)
-    assert not any(position.isdigit() for position in password)
-    assert not any(position.isupper() for position in password)
+    assert len(password[0]) == 8
+    assert password[0].islower()
+    assert not any(symbol in punctuation for symbol in password[0])
+    assert not any(position.isdigit() for position in password[0])
+    assert not any(position.isupper() for position in password[0])
 
 
 def test_generate_password():
@@ -160,11 +160,11 @@ def test_generate_password():
         "types_of_characters": ["digits", "lowercase"],
     }
     assert (password := get_response(password_data)) is not None
-    assert len(password) == 12
-    assert password.isalnum()
-    assert not password.isupper()
-    assert not any(symbol in punctuation for symbol in password)
-    assert not any(position.isupper() for position in password)
+    assert len(password[0]) == 12
+    assert password[0].isalnum()
+    assert not password[0].isupper()
+    assert not any(symbol in punctuation for symbol in password[0])
+    assert not any(position.isupper() for position in password[0])
 
 
 def test_generate_password_two():
@@ -174,10 +174,10 @@ def test_generate_password_two():
         "types_of_characters": ["lowercase", "digits"],
     }
     assert (password := get_response(password_data)) is not None
-    assert len(password) == 13
-    assert password.isalnum()
-    assert password.islower()
-    assert not any(position.isupper() for position in password)
+    assert len(password[0]) == 13
+    assert password[0].isalnum()
+    assert password[0].islower()
+    assert not any(position.isupper() for position in password[0])
 
 
 def test_generate_password_with_symbols():
@@ -187,5 +187,5 @@ def test_generate_password_with_symbols():
         "types_of_characters": "symbols",
     }
     assert (password := get_response(password_data)) is not None
-    assert len(password) == 20
-    assert any(symbol in punctuation for symbol in password)
+    assert len(password[0]) == 20
+    assert any(symbol in punctuation for symbol in password[0])

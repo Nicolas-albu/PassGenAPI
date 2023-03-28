@@ -134,26 +134,26 @@ def test_generate_password():
     generated_password = PasswordGenerator(12, 1, ("digits", "lowercase"))
     password = generated_password.generate_password()
     assert password is not None
-    assert len(password) == 12
-    assert password.isalnum()
-    assert not password.isupper()
-    assert not any(symbol in punctuation for symbol in password)
-    assert not any(position.isupper() for position in password)
+    assert len(password[0]) == 12
+    assert password[0].isalnum()
+    assert not password[0].isupper()
+    assert not any(symbol in punctuation for symbol in password[0])
+    assert not any(position.isupper() for position in password[0])
 
 
 def test_generate_password_two():
     generated_password = PasswordGenerator(13, 1, ("lowercase", "digits"))
     password = generated_password.generate_password()
     assert password is not None
-    assert len(password) == 13
-    assert password.isalnum()
-    assert password.islower()
-    assert not any(position.isupper() for position in password)
+    assert len(password[0]) == 13
+    assert password[0].isalnum()
+    assert password[0].islower()
+    assert not any(position.isupper() for position in password[0])
 
 
 def test_generate_password_with_symbols():
     generated_password = PasswordGenerator(20, 1, ("symbols",))
     password = generated_password.generate_password()
     assert password is not None
-    assert len(password) == 20
-    assert any(symbol in punctuation for symbol in password)
+    assert len(password[0]) == 20
+    assert any(symbol in punctuation for symbol in password[0])
