@@ -16,4 +16,4 @@ EXPOSE 8000
 
 WORKDIR /PassGenAPI
 
-CMD ["python","-m","uvicorn","passgenapi.main:app"]
+CMD ["uvicorn", "passgenapi.main:app", "--host", "0.0.0.0", "--port", "80"]
