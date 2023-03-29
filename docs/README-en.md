@@ -1,23 +1,25 @@
-<img src="src\PassGenAPI-GIF.gif" alt="PassGenAPI">
+<img src="docs\src\PassGenAPI-GIF.gif" alt="PassGenAPI">
 
 # :globe_with_meridians: **PassGenAPI**
-  The :globe_with_meridians:**PassGenAPI** is a fun and useful tool to generate strong:lock::muscle: and secure passwords for you and your users!:man_technologist: With our API, you can easily create **random passwords* * with various lengths and levels of complexity and **hashes**. Choose from special characters, uppercase and lowercase letters, numbers and soon much more to customize your password! Furthermore, you can easily integrate our API with other tools to make your application even more secure and reliable. So why use easy to guess passwords when you can have strong and secure passwords with PassGenAPI? 💂🏼‍♂️
+   :globe_with_meridians:**PassGenAPI** is a fun and useful tool to generate passwords that are strong:lock::muscle: and safe for you and your users!:man_technologist: With our API, you can easily create **random passwords** with various lengths and levels of complexity and **hashes**. Choose from special characters, uppercase and lowercase letters, numbers and soon much more to customize your password! Furthermore, you can easily integrate our API with other tools to make your application even more secure and reliable. So why use easy to guess passwords when you can have strong and secure passwords with PassGenAPI? 💂🏼‍♂️
 
-<div align="center" alt="contatos">
-  <a href="https://github.com/Nicolas-albu/PassGenAPI/blob/main/LICENSE" target="_blank"><img src="https://img.shields.io/github/license/Nicolas-albu/PassGenAPI?style=for-the-badge" target="_blank"></a>
-  <img src="https://img.shields.io/badge/version-1.1.10-blue?style=for-the-badge" target="_blank">
+<div align="center" alt="contacts">
+   <a href="https://github.com/Nicolas-albu/PassGenAPI/blob/main/LICENSE" target="_blank"><img src="https://img.shields.io/github/license/ Nicolas-albu/PassGenAPI?style=for-the-badge" target="_blank"></a>
+   <img src="https://img.shields.io/badge/version-1.1.10-blue?style=for-the-badge" target="_blank">
 </div>
 
-  #### :earth_americas: **Language of documents:**
-  PassGenAPI documentation is available in English and Portuguese. To choose the desired language, just click on the next language. All code examples, instructions, and controls are available in your chosen language to make the API easier to understand and use.
+##
 
-  **USA** [**English**](README-en.md)
+   #### :earth_americas: **Documentation language:**
+   PassGenAPI documentation is available in English and Portuguese. To choose the desired language, just click on the next language. All code examples, instructions, and explanations will be available in your chosen language to make the API easier to understand and use.
 
-  **BRA** [**Português**](README.md)
+   **USA** [**English**](docs/README-en.md)
+
+   **BRA** [**Portuguese**](README.md)
 
 ## :page_with_curl: Documentation Summary
-- [:thinking: **What can I use PassGenAPI for?**](#thinking-what-can-i-use-passgenapi-for)
-- [:computer: **How ​​to use**](#computer-how-​​to-use)
+- [:thinking: **What can I use PassGenAPI for?**](#what-can-I-use-passgenapi-for)
+- [:computer: **How to use**](#computer-how-to-use)
 - [:man_technologist: **Installation**](#man_technologist-installation)
 - [:pushpin: **About PassGenAPI**](#pushpin-about-passgenapi)
 - [:rotating_light: **License**](#rotating_light-license)
@@ -29,20 +31,20 @@
 | **password** | generation of personalized passwords with various lengths, number of passwords and specific characters such as symbols, lowercase, uppercase and digits |
 | **hash** | generation of hashes of different types, such as MD5, SHA-1, SHA-2 and SHA-3
 
-## :computer: **How ​​to use**
+## :computer: **How to use**
 
-You can use a PassGenAPI to
+You can use the PassGenAPI to
 
 <details>
 <summary> <b>:point_right:generating random passwords</b> </summary>
 
-Send an HTTP POST request to the "**pass-gen-api.vercel.app/password**" endpoint. The API accepts the following parameters:
+Send an HTTP POST request to the "**https://passgenapi.onrender.com/password**" endpoint. The API accepts the following parameters:
 
 | Parameters | Type | Description | Options | Default Value |
 | :---: | :---: | --- | --- | :---: |
 | **password_length** | **int** | sets password length | | 12 |
 | **number_of_passwords** | **int** | defines the number of passwords to be generated | | 1 |
-| **type_of_characters** | **str** \| **list[str]** | defines the type of characters that will be used to generate the password | **lowercase**, **uppercase**, **digits** and **symbols** | all types of characters |
+| **types_of_characters** | **str** \| **list[str]** | defines the type of characters that will be used to generate the password | **lowercase**, **uppercase**, **digits** and **symbols** | all types of characters |
 
 <!--[Want to see an example of using these parameters?](#com-requests)-->
 
@@ -54,13 +56,13 @@ import json
 import requests
 
 # Set the API endpoint
-endpoint = "https://pass-gen-api.vercel.app/password"
+endpoint = "https://passgenapi.onrender.com/password"
 
 # Define the data that will be sent in JSON format
 password_data = {
-    "password_length": 10,
-    "number_of_passwords": 3,
-    "type_of_characters": ["digits", "lowercase"]
+     "password_length": 10,
+     "number_of_passwords": 3,
+     "type_of_characters": ["digits", "lowercase"]
 }
 
 # Convert data to JSON format
@@ -79,7 +81,7 @@ print(response.json()['password'])
 <details>
 <summary><b>:point_right:hash generation</b></summary>
 
-Send an HTTP POST request to the "**pass-gen-api.vercel.app/hash**" endpoint. The API accepts the following parameters:
+Send an HTTP POST request to the "**https://passgenapi.onrender.com/hash**" endpoint. The API accepts the following parameters:
 
 | Parameters | Type | Description | Options |
 | :---: | :---: | --- | :---: |
@@ -103,13 +105,13 @@ import json
 import requests
 
 # Set the API endpoint
-endpoint = "https://pass-gen-api.vercel.app/password"
+endpoint = "https://passgenapi.onrender.com/password"
 
 # Define the data that will be sent in JSON format
 password_data = {
-    "password_length": 10,
-    "number_of_passwords": 3,
-    "type_of_characters": ["digits", "lowercase", "symbols"]
+     "password_length": 10,
+     "number_of_passwords": 3,
+     "type_of_characters": ["digits", "lowercase", "symbols"]
 }
 
 # Convert data to JSON format
@@ -122,42 +124,104 @@ response = requests.post(url=endpoint, data=json_password_data)
 print(response.json()['password'])
 
 ```
-
 </details>
 
+
 ## :man_technologist: **Installation**
+
+<details>
+<summary> <b>:point_right:Use on local machine</b> </summary>
 
 To use PassGenAPI locally, follow the steps below:
 
 1. **Clone the repository in your local environment:**
-    ```console
-    $ git clone https://github.com/Nicolas-albu/PassGenAPI.git
-    ```
+     ```console
+     $ git clone https://github.com/Nicolas-albu/PassGenAPI.git
+     ```
 
-2. **Create a virtual environment with the appropriate command for your operating system:**
-    * **Windows:**
-        ```console
-        $ py -m venv environment_name
-        ```
-    * **Linux/macOS:**
-        ```console
-        $ python3 -m venv environment_name
-        ```
+2. **Enter the cloned repository:**
+     ```console
+     $ cd PassGenAPI
+     ```
 
-3. **Activate the virtual environment:**
-    * **Windows:**
-        ```console
-        $ environment_name\Scripts\activate
-        ```
-    * **Linux/macOS:**
-        ```console
-        $ source environment_name/bin/activate
-        ```
+3. **Create a virtual environment with the appropriate command for your operating system:**
+     * **Windows:**
+         ```console
+         $ py -m venv environment_name
+         ```
+     * **Linux/macOS:**
+         ```console
+         $ python3 -m venv environment_name
+         ```
 
-4. **Install the dependencies with the following command:**
-    ```console
-    $ pip install -r requirements.txt
-    ```
+4. **Activate the virtual environment:**
+     * **Windows:**
+         ```console
+         (environment_name)$ environment_name\Scripts\activate
+         ```
+     * **Linux/macOS:**
+         ```console
+         (environment_name)$ source environment_name/bin/activate
+         ```
+
+5. **Install the dependencies with the following command:**
+     ```console
+     (environment_name)$ pip install -r requirements.txt
+     ```
+
+6. **In the root of the PassGenAPI project, run the following command:**
+     ```console
+     (environment_name)$ uvicorn passgenapi.main:app --host localhost --port 8000
+     ```
+
+     :point_right:This command makes the server run on your machine's localhost on port 8000.
+
+     :warning: **Note:** you can change the host and port just by changing the arguments of `--host` and `--port`
+
+</details>
+
+
+<details>
+<summary> <b>:point_right:Use in a Docker container</b> </summary>
+
+1. **Clone the repository in your local environment:**
+     ```console
+     $ git clone https://github.com/Nicolas-albu/PassGenAPI.git
+     ```
+
+2. **Enter the cloned repository:**
+     ```console
+     $ cd PassGenAPI
+     ```
+
+3. **Create a PassGenAPI image:**
+     ```console
+     $ docker image build -t image_passgenapi .
+     ```
+
+4. **Create a container for the newly generated image:**
+     ```console
+     $ docker run -d --name container_passgenapi -p 80:80 image_passgenapi
+     ```
+
+</details>
+
+
+## :rocket: **Versions**
+### **v1.1.10**
+The :globe_with_meridians:**PassGenAPI** version 1.1.10 brought the following improvements:
+- [x] Improved encapsulation of PasswordGenerator class methods
+- [x] Added hash generation: HashGenerator
+- [x] Improved unit testing
+- [x] PasswordGenerator class refactoring
+- [x] Memory performance improvement
+- [x] API Deployment in a Docker Container
+- [x] Migration from Vercel to Render
+
+### **v1.1.4**
+The :globe_with_meridians:**PassGenAPI** version 1.1.4 was the first version to go into production at Vercel, without a Docker container, only with FastAPI and Pytest:
+- [x] Creation of password generation class: PasswordGenerator
+- [x] Deploy at Vercel
 
 ## :pushpin: **About PassGenAPI**
 :globe_with_meridians:**PassGenAPI** was developed with a focus on high performance, using the **FastAPI**:zap: web framework. With the use of FastAPI, the API offers significantly superior performance compared to other similar tools, ensuring an agile and efficient user experience. FastAPI is known for its efficiency and ease of use, allowing PassGenAPI to be developed more quickly and scalably. In addition, FastAPI provides features such as automatic documentation and type validation, making creating and maintaining the API easier and less error-prone:heavy_check_mark:.
