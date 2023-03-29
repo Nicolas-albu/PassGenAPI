@@ -1,5 +1,7 @@
 from string import punctuation
 
+import pytest
+
 from passgenapi.generators.password_generator import PasswordGenerator
 
 
@@ -23,7 +25,7 @@ def test_generate_full_character_password_list():
         types_of_characters=("digits", "lowercase", "symbols", "uppercase"),
     )
     list_of_passwords = generated_password.generate_password()
-    assert list_of_passwords is not None
+    assert (list_of_passwords := (*list_of_passwords,)) is not None
     assert len(list_of_passwords) == 4
     assert any(len(password) == 10 for password in list_of_passwords)
     assert any(
@@ -92,9 +94,9 @@ def test_generate_password_with_symbols():
         20, 1, tuple(sorted(("uppercase", "lowercase", "digits", "symbols")))
     )
     password = generated_password.generate_password()
-    assert password is not None
-    assert len(password) == 20
-    assert any(symbol in punctuation for symbol in password)
+    assert (password := (*password,)) is not None
+    assert len(password[0]) == 20
+    assert any(symbol in punctuation for symbol in password[0])
 
 
 def test_generate_password_with_digits():
@@ -133,7 +135,7 @@ def test_generate_password_with_lowercase():
 def test_generate_password():
     generated_password = PasswordGenerator(12, 1, ("digits", "lowercase"))
     password = generated_password.generate_password()
-    assert password is not None
+    assert (password := (*password,)) is not None
     assert len(password[0]) == 12
     assert password[0].isalnum()
     assert not password[0].isupper()
@@ -144,16 +146,16 @@ def test_generate_password():
 def test_generate_password_two():
     generated_password = PasswordGenerator(13, 1, ("lowercase", "digits"))
     password = generated_password.generate_password()
-    assert password is not None
+    assert (password := (*password,)) is not None
     assert len(password[0]) == 13
     assert password[0].isalnum()
     assert password[0].islower()
     assert not any(position.isupper() for position in password[0])
 
 
-def test_generate_password_with_symbols():
+def test_generate_password_with_symbols_two():
     generated_password = PasswordGenerator(20, 1, ("symbols",))
     password = generated_password.generate_password()
-    assert password is not None
+    assert (password := (*password,)) is not None
     assert len(password[0]) == 20
     assert any(symbol in punctuation for symbol in password[0])
