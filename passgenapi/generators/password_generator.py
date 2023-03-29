@@ -2,6 +2,7 @@
 
 import secrets
 from string import ascii_lowercase, ascii_uppercase, digits, punctuation
+from typing import Generator
 
 
 class PasswordGenerator:
@@ -49,7 +50,7 @@ class PasswordGenerator:
             if len(self.__types_of_characters) != 4  # max size of char types
             else self.generate_full_character_password
         )
-        __passwords = tuple(
+        __passwords: Generator = (
             __password_generated()
             for number in range(self.__number_of_passwords)
         )
