@@ -175,7 +175,7 @@ Para utilizar a PassGenAPI localmente, siga os passos abaixo:
     (nome_do_ambiente)$ uvicorn passgenapi.main:app --host localhost --port 8000
     ```
 
-    :point_right:Esse comando faz com que rode o servidor no host local da sua máquina na porta 8000.
+    Esse comando faz com que rode o servidor no host local da sua máquina na porta 8000.
 
     :warning: **Observação:** você pode mudar o host e a porta apenas alterando os argumentos de `--host` e `--port`
 
@@ -225,11 +225,11 @@ A :globe_with_meridians:**PassGenAPI** versão 1.1.4 foi a primeira versão a en
 - [x] Deploy na Vercel
 
 ## :pushpin: **Sobre a PassGenAPI**
-A :globe_with_meridians:**PassGenAPI** foi desenvolvida com um foco em alto desempenho, utilizando o framework web **FastAPI**:zap:. Com a utilização do FastAPI, a API oferece uma performance significativamente superior em relação a outras ferramentas similares, garantindo uma experiência ágil e eficiente ao usuário. O FastAPI é conhecido por sua eficiência e facilidade de uso, permitindo que a PassGenAPI seja desenvolvida de forma mais rápida e escalável. Além disso, o FastAPI fornece recursos como documentação automática e validação de tipos, tornando a criação e manutenção da API mais fácil e menos propensa a erros:heavy_check_mark:.
+A :globe_with_meridians:**PassGenAPI** foi desenvolvida com um foco em alto desempenho, utilizando o framework web **FastAPI**:zap:. Com a utilização do FastAPI, a API oferece uma performance significativamente superior em relação a outras ferramentas similares, garantindo uma experiência ágil e eficiente ao usuário. O FastAPI é conhecido por sua eficiência e facilidade de uso, permitindo que a PassGenAPI seja desenvolvida de forma mais rápida e escalável. Além disso, o FastAPI fornece recursos como documentação automática e validação de tipos, tornando a criação e manutenção da API mais fácil e menos propensa a erros :heavy_check_mark:.
 
 Além disso, a PassGenAPI foi testada com **Pytest** para garantir a qualidade do código e da aplicação. Os testes automatizados foram uma parte importante do processo de desenvolvimento de software, pois ajudaram a identificar problemas precocemente.
 
-Além disso, estamos sempre trabalhando em novas implementações para oferecer ainda mais opções personalizáveis para a geração de senhas. Então, fique de olho nas atualizações futuras da PassGenAPI para ter acesso a novas funcionalidades e tornar a sua aplicação ainda mais segura e confiável! :lock:
+Além disso, estamos sempre trabalhando em novas implementações para oferecer ainda mais opções personalizáveis para a geração de senhas, como a recente implementação do Docker. Então, fique de olho nas atualizações futuras da PassGenAPI para ter acesso a novas funcionalidades e tornar a sua aplicação ainda mais segura e confiável! :lock:
 
 <img src="https://img.shields.io/badge/version-1.1.10-blue?style=for-the-badge" target="_blank">
 

@@ -224,7 +224,7 @@ The :globe_with_meridians:**PassGenAPI** version 1.1.4 was the first version to 
 - [x] Deploy at Vercel
 
 ## :pushpin: **About PassGenAPI**
-:globe_with_meridians:**PassGenAPI** was developed with a focus on high performance, using the **FastAPI**:zap: web framework. With the use of FastAPI, the API offers significantly superior performance compared to other similar tools, ensuring an agile and efficient user experience. FastAPI is known for its efficiency and ease of use, allowing PassGenAPI to be developed more quickly and scalably. In addition, FastAPI provides features such as automatic documentation and type validation, making creating and maintaining the API easier and less error-prone:heavy_check_mark:.
+:globe_with_meridians:**PassGenAPI** was developed with a focus on high performance, using the **FastAPI**:zap: web framework. With the use of FastAPI, the API offers significantly superior performance compared to other similar tools, ensuring an agile and efficient user experience. FastAPI is known for its efficiency and ease of use, allowing PassGenAPI to be developed more quickly and scalably. In addition, FastAPI provides features such as automatic documentation and type validation, making creating and maintaining the API easier and less error-prone :heavy_check_mark:.
 
 Furthermore, PassGenAPI has been tested with **Pytest** to ensure code and application quality. Automated testing was an important part of the software development process as it helped to identify problems early.
 
