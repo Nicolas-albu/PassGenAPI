@@ -1,10 +1,5 @@
-api/routes/models/__pycache__
-api/generator/__pycache__
-api/routes/__pycache__
 tests/rest_of_code.py
 tests/test_code.py
-tests/__pycache__
-api/__pycache__
 .pytest_cache
 develop_api
 ideas.md
@@ -12,4 +7,7 @@ ideas.md
 .vercel
 .env
 README-dev.md
-requirements_dev.txt
+__pycache__
+config
+tree.txt
+venv

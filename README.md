@@ -1,12 +1,12 @@
+<img src="docs\src\PassGenAPI-GIF.gif" alt="PassGenAPI">
 
-<img src="docs\PassGenAPI-GIF.gif" alt="PassGenAPI">
 
 # :globe_with_meridians: **PassGenAPI** 
   A :globe_with_meridians:**PassGenAPI** é uma ferramenta divertida e útil para gerar senhas fortes:lock::muscle: e seguras para você e seus usuários!:man_technologist: Com a nossa API, você pode facilmente criar **senhas aleatórias** com vários comprimentos e níveis de complexidade e **hashes**. Escolha entre caracteres especiais, letras maiúsculas e minúsculas, números e em breve muito mais para personalizar a sua senha! Além disso, você pode integrar facilmente a nossa API com outras ferramentas para tornar a sua aplicação ainda mais segura e confiável. Então, por que usar senhas fáceis de adivinhar quando você pode ter senhas fortes e seguras com a PassGenAPI? 💂🏼‍♂️
 
 <div align="center" alt="contatos">
   <a href="https://github.com/Nicolas-albu/PassGenAPI/blob/main/LICENSE" target="_blank"><img src="https://img.shields.io/github/license/Nicolas-albu/PassGenAPI?style=for-the-badge" target="_blank"></a>
-  <img src="https://img.shields.io/badge/version-1.1.4-blue?style=for-the-badge" target="_blank">
+  <img src="https://img.shields.io/badge/version-1.1.10-blue?style=for-the-badge" target="_blank">
 </div>
 
 ##
@@ -14,7 +14,7 @@
   #### :earth_americas: **Idioma da documentação:**
   A documentação da PassGenAPI está disponível em inglês e português. Para escolher o idioma desejado, basta clicar no idioma seguinte. Todos os exemplos de código, instruções e explicações estarão disponíveis no idioma escolhido para facilitar a compreensão e utilização da API.
 
-  **USA** [**English**](README-en.md)
+  **USA** [**English**](docs/README-en.md)
 
   **BRA** [**Português**](README.md)
 
@@ -39,7 +39,7 @@ Você pode usar a PassGenAPI para
 <details>
 <summary> <b>:point_right:geração de senhas aleatórias</b> </summary>
 
-Enviar uma solicitação HTTP POST para o endpoint "**pass-gen-api.vercel.app/password**". A API aceita os seguintes parâmetros:
+Enviar uma solicitação HTTP POST para o endpoint "**https://passgenapi.onrender.com/password**". A API aceita os seguintes parâmetros:
 
 |    Parâmetros   | Tipo | Descrição  | Opções | Valor Padrão |
 |      :---:      | :---:  |    ---     |  ---   |    :---:     |
@@ -57,7 +57,7 @@ import json
 import requests
 
 # Define o endpoint da API
-endpoint = "https://pass-gen-api.vercel.app/password"
+endpoint = "https://passgenapi.onrender.com/password"
 
 # Define os dados que serão enviados no formato JSON
 password_data = {
@@ -82,7 +82,7 @@ print(response.json()['password'])
 <details>
 <summary><b>:point_right:geração de hashes</b></summary>
 
-Enviar uma solicitação HTTP POST para o endpoint "**pass-gen-api.vercel.app/hash**". A API aceita os seguintes parâmetros:
+Enviar uma solicitação HTTP POST para o endpoint "**https://passgenapi.onrender.com/hash**". A API aceita os seguintes parâmetros:
 
 |    Parâmetros        | Tipo    | Descrição  | Opções |
 |      :---:           | :---:   |    ---     | :---:  |
@@ -106,7 +106,7 @@ import json
 import requests
 
 # Define o endpoint da API
-endpoint = "https://pass-gen-api.vercel.app/password"
+endpoint = "https://passgenapi.onrender.com/password"
 
 # Define os dados que serão enviados no formato JSON
 password_data = {
@@ -130,6 +130,9 @@ print(response.json()['password'])
 
 ## :man_technologist: **Instalação**
 
+<details>
+<summary> <b>:point_right:Utilizar na máquina local</b> </summary>
+
 Para utilizar a PassGenAPI localmente, siga os passos abaixo:
 
 1. **Clone o repositório em seu ambiente local:**
@@ -137,7 +140,12 @@ Para utilizar a PassGenAPI localmente, siga os passos abaixo:
     $ git clone https://github.com/Nicolas-albu/PassGenAPI.git
     ```
 
-2. **Crie um ambiente virtual com o comando apropriado para o seu sistema operacional:**
+2. **Entre no repositório clonado:**
+    ```console
+    $ cd PassGenAPI
+    ```
+
+3. **Crie um ambiente virtual com o comando apropriado para o seu sistema operacional:**
     * **Windows:**
         ```console
         $ py -m venv nome_do_ambiente
@@ -147,29 +155,83 @@ Para utilizar a PassGenAPI localmente, siga os passos abaixo:
         $ python3 -m venv nome_do_ambiente
         ```
 
-3. **Ative o ambiente virtual:**
+4. **Ative o ambiente virtual:**
     * **Windows:**
         ```console
-        $ nome_do_ambiente\Scripts\activate
+        (nome_do_ambiente)$ nome_do_ambiente\Scripts\activate
         ```
     * **Linux/macOS:**
         ```console
-        $ source nome_do_ambiente/bin/activate
+        (nome_do_ambiente)$ source nome_do_ambiente/bin/activate
         ```
 
-4. **Instale as dependências com o seguinte comando:**
+5. **Instale as dependências com o seguinte comando:**
     ```console
-    $ pip install -r requirements.txt
+    (nome_do_ambiente)$ pip install -r requirements.txt
     ```
 
+6. **Na raiz do projeto PassGenAPI, execute o seguinte comando:**
+    ```console
+    (nome_do_ambiente)$ uvicorn passgenapi.main:app --host localhost --port 8000
+    ```
+
+    Esse comando faz com que rode o servidor no host local da sua máquina na porta 8000.
+
+    :warning: **Observação:** você pode mudar o host e a porta apenas alterando os argumentos de `--host` e `--port`
+
+</details>
+
+
+<details>
+<summary> <b>:point_right:Utilizar em um contâiner Docker</b> </summary>
+
+1. **Clone o repositório em seu ambiente local:**
+    ```console
+    $ git clone https://github.com/Nicolas-albu/PassGenAPI.git
+    ```
+
+2. **Entre no repositório clonado:**
+    ```console
+    $ cd PassGenAPI
+    ```
+
+3. **Crie uma imagem da PassGenAPI:**
+    ```console
+    $ docker image build -t image_passgenapi .
+    ```
+
+4. **Crie um container pela imagem recém-gerada:**
+    ```console
+    $ docker run -d --name container_passgenapi -p 80:80 image_passgenapi
+    ```
+
+</details>
+
+
+## :rocket: **Versões**
+### **v1.1.10**
+A :globe_with_meridians:**PassGenAPI** versão 1.1.10 trouxe as seguintes melhorias:
+- [x] Melhoria no encapsulamento dos métodos da classe PasswordGenerator
+- [x] Adição de geração de hashes: HashGenerator
+- [x] Melhoria nos testes unitários
+- [x] Refatoração da classe PasswordGenerator
+- [x] Melhoria na perfomance da memória
+- [x] Implantação da API um contâiner Docker
+- [x] Migração da Vercel para Render
+
+### **v1.1.4**
+A :globe_with_meridians:**PassGenAPI** versão 1.1.4 foi a primeira versão a entrar em produção na Vercel, sem contâiner Docker, apenas com FastAPI e Pytest:
+- [x] Criação da classe de geração de senhas: PasswordGenerator
+- [x] Deploy na Vercel
+
 ## :pushpin: **Sobre a PassGenAPI**
-A :globe_with_meridians:**PassGenAPI** foi desenvolvida com um foco em alto desempenho, utilizando o framework web **FastAPI**:zap:. Com a utilização do FastAPI, a API oferece uma performance significativamente superior em relação a outras ferramentas similares, garantindo uma experiência ágil e eficiente ao usuário. O FastAPI é conhecido por sua eficiência e facilidade de uso, permitindo que a PassGenAPI seja desenvolvida de forma mais rápida e escalável. Além disso, o FastAPI fornece recursos como documentação automática e validação de tipos, tornando a criação e manutenção da API mais fácil e menos propensa a erros:heavy_check_mark:.
+A :globe_with_meridians:**PassGenAPI** foi desenvolvida com um foco em alto desempenho, utilizando o framework web **FastAPI**:zap:. Com a utilização do FastAPI, a API oferece uma performance significativamente superior em relação a outras ferramentas similares, garantindo uma experiência ágil e eficiente ao usuário. O FastAPI é conhecido por sua eficiência e facilidade de uso, permitindo que a PassGenAPI seja desenvolvida de forma mais rápida e escalável. Além disso, o FastAPI fornece recursos como documentação automática e validação de tipos, tornando a criação e manutenção da API mais fácil e menos propensa a erros :heavy_check_mark:.
 
 Além disso, a PassGenAPI foi testada com **Pytest** para garantir a qualidade do código e da aplicação. Os testes automatizados foram uma parte importante do processo de desenvolvimento de software, pois ajudaram a identificar problemas precocemente.
 
-Além disso, estamos sempre trabalhando em novas implementações para oferecer ainda mais opções personalizáveis para a geração de senhas. Então, fique de olho nas atualizações futuras da PassGenAPI para ter acesso a novas funcionalidades e tornar a sua aplicação ainda mais segura e confiável! :lock:
+Além disso, estamos sempre trabalhando em novas implementações para oferecer ainda mais opções personalizáveis para a geração de senhas, como a recente implementação do Docker. Então, fique de olho nas atualizações futuras da PassGenAPI para ter acesso a novas funcionalidades e tornar a sua aplicação ainda mais segura e confiável! :lock:
 
-<img src="https://img.shields.io/badge/version-1.1.4-blue?style=for-the-badge" target="_blank">
+<img src="https://img.shields.io/badge/version-1.1.10-blue?style=for-the-badge" target="_blank">
 
 ## :rotating_light: **Licença**
 
