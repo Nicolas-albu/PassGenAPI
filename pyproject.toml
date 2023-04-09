@@ -19,6 +19,7 @@ prospector = {extras = ["with-vulture"], version = "^1.9.0"}
 ipython = "^8.11.0"
 pip-audit = "^2.5.1"
 pyinstrument = "^4.4.0"
+rich = "^13.3.3"
 
 [build-system]
 requires = ["poetry-core"]
