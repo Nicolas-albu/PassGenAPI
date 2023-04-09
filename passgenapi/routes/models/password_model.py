@@ -1,8 +1,8 @@
 """This module contains the parameter template for the password generation POST route."""
 
-from typing import Optional, Union
+from typing import Any, Optional
 
-from pydantic import BaseModel, root_validator, validator
+from pydantic import BaseModel, validator
 
 from ...errors import PasswordNumberLessThanZeroError
 
@@ -25,43 +25,34 @@ class PasswordModel(BaseModel):
 
     password_length: int = 12
     number_of_passwords: int = 1
-    types_of_characters: Optional[tuple[str] | list[str] | str] = DEFAULT_TYPES_OF_CHARACTERS
-    
+    types_of_characters: Optional[
+        tuple[str] | list[str] | str
+    ] = DEFAULT_TYPES_OF_CHARACTERS
+
     @validator("number_of_passwords")
     def cannot_be_less_than_zero(cls, value: int):
         if value <= 0:
             raise PasswordNumberLessThanZeroError()
         return value
 
-    @root_validator
-    def convert_if_types_of_characters_is_none(cls, parameters: dict) -> dict:
-        if parameters["types_of_characters"] is None:
-            parameters["types_of_characters"] = DEFAULT_TYPES_OF_CHARACTERS
-        return parameters
+    @validator("types_of_characters")
+    def convert_if_types_of_characters_is_none(cls, types_chars: None) -> dict:
+        if types_chars is None:
+            types_chars = DEFAULT_TYPES_OF_CHARACTERS
+        return types_chars
 
-    @root_validator
-    def convert_types_of_characters_to_tuple(cls, parameters: dict) -> dict:
+    @validator("types_of_characters")
+    def convert_types_of_characters_to_tuple(cls, types_chars: str | list[str]) -> tuple[str]:
         """Converts the value of the type_of_character parameter to a tuple.
 
         Args:
-            parameters (dict): parameters in dictionary
+            types_chars (str | list[str]): types_of_characters
 
         Returns:
-            dict: parameters with types_of_characters as tuple
+            tuple: types_of_characters as tuple
         """
+        if isinstance(types_chars, list):
+            return tuple(sorted(types_chars))
 
-        types_of_chars: Union[tuple, list, str] = parameters[
-            "types_of_characters"
-        ]
-        parameters["types_of_characters"] = (
-            types_of_chars
-            if isinstance(types_of_chars, tuple)
-            else tuple(
-                sorted(
-                    types_of_chars
-                    if isinstance(types_of_chars, list)
-                    else [types_of_chars]
-                )
-            )
-        )
-        return parameters
+        elif isinstance(types_chars, str):
+            return (types_chars,)
