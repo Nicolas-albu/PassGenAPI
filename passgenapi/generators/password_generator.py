@@ -74,6 +74,7 @@ class PasswordGenerator:
             str: passwords generated with all characters
         """
 
+        @staticmethod
         def verify_has_digits_lower_upper(password: str) -> bool:
             """Check if password has digits, characters lower and upper.
 
@@ -94,6 +95,7 @@ class PasswordGenerator:
             )
             return __has_digit and __has_lower and __has_upper
 
+        @staticmethod
         def verify_has_symbols(password: str) -> bool:
             """Check if password has symbols.
 
