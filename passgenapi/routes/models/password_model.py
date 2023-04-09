@@ -1,10 +1,17 @@
 """This module contains the parameter template for the password generation POST route."""
 
-from typing import Union
+from typing import Optional, Union
 
 from pydantic import BaseModel, root_validator, validator
 
 from ...errors import PasswordNumberLessThanZeroError
+
+DEFAULT_TYPES_OF_CHARACTERS: tuple[str] = (
+    "digits",
+    "lowercase",
+    "symbols",
+    "uppercase",
+)
 
 
 class PasswordModel(BaseModel):
@@ -13,23 +20,24 @@ class PasswordModel(BaseModel):
     Args:
         * BaseModel (pydantic.BaseModel): Password template for the parameters of a JSON request from endpoint /password_definitions/
         * password_length (int): Length of the password
-        * type_of_characters (list[str] | str): Character types, default equals ["digits", "lowercase", "symbols", "uppercase"]
+        * type_of_characters (tuple[str] | list[str] | str | None): Character types, default equals ("digits", "lowercase", "symbols", "uppercase")
     """
 
     password_length: int = 12
     number_of_passwords: int = 1
-    types_of_characters: Union[list[str], str] = (
-        "digits",
-        "lowercase",
-        "symbols",
-        "uppercase",
-    )
-
+    types_of_characters: Optional[tuple[str] | list[str] | str] = DEFAULT_TYPES_OF_CHARACTERS
+    
     @validator("number_of_passwords")
     def cannot_be_less_than_zero(cls, value: int):
         if value <= 0:
             raise PasswordNumberLessThanZeroError()
         return value
+
+    @root_validator
+    def convert_if_types_of_characters_is_none(cls, parameters: dict) -> dict:
+        if parameters["types_of_characters"] is None:
+            parameters["types_of_characters"] = DEFAULT_TYPES_OF_CHARACTERS
+        return parameters
 
     @root_validator
     def convert_types_of_characters_to_tuple(cls, parameters: dict) -> dict:
